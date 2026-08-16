@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ka-store.app/sitemap.xml
+Sitemap: https://katanja300824-dotcom.github.io/ka-store-site/sitemap.xml
