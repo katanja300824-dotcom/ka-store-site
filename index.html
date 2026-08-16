@@ -3,293 +3,676 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KA Store — Compose ta tenue, swipe par swipe</title>
+<title>KA Store — Essayage virtuel par IA | Compose ta tenue, swipe par swipe</title>
 <meta name="description" content="KA Store est l'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter. Swipe ton haut, ton bas, tes chaussures — l'IA fait le reste.">
+<meta name="keywords" content="essayage virtuel, essayage IA, application mode, try-on virtuel, shopping IA, KA Store">
+<meta name="author" content="KA">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF2400">
+<link rel="canonical" href="https://ka-store.app/">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ka-store.app/">
+<meta property="og:site_name" content="KA Store">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="KA Store — Compose ta tenue, swipe par swipe">
+<meta property="og:description" content="L'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter. Swipe ton haut, ton bas, tes chaussures — l'IA fait le reste.">
+<meta property="og:image" content="https://ka-store.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KA Store — Compose ta tenue, swipe par swipe">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KA Store — Compose ta tenue, swipe par swipe">
+<meta name="twitter:description" content="L'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter.">
+<meta name="twitter:image" content="https://ka-store.app/og-image.png">
+<meta name="twitter:image:alt" content="KA Store — Compose ta tenue, swipe par swipe">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "KA Store",
+  "url": "https://ka-store.app/",
+  "description": "Application d'essayage virtuel par IA. Swipe pour composer ta tenue et vois le résultat directement sur toi avant d'acheter.",
+  "applicationCategory": "ShoppingApplication",
+  "operatingSystem": "Android",
+  "inLanguage": "fr-FR",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
 <style>
   :root{
-    --fond:#FFFFFF;
-    --texte:#1A1410;
-    --texte-muted:#7A6A58;
-    --texte-faint:#C7B49A;
-    --primaire:#FF6B35;
-    --primaire-highlight:#FFE0D0;
-    --lavande:#FF3D9A;
-    --lavande-highlight:#FFDCEF;
-    --peche:#FFD23F;
-    --peche-highlight:#FFF3C4;
-    --sauge:#3DDC84;
-    --sauge-highlight:#D8F8E4;
-    --bordure:#FFB877;
+    --papier:#FFFFFF;
+    --papier-alt:#FBFAF8;
+    --encre:#14120F;
+    --encre-soft:#3A362F;
+    --rouge:#FF2400;
+    --rouge-dim:#D91E00;
+    --bleu:#1435FF;
+    --jaune:#FFE600;
+    --pierre:#A69C8E;
+    --ligne:#E7E2D8;
+    --ligne-forte:#D8D1C2;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--fond);
-    color:var(--texte);
-    font-family:'Plus Jakarta Sans', system-ui, sans-serif;
+    background:var(--papier);
+    color:var(--encre);
+    font-family:'Space Grotesk', system-ui, sans-serif;
     -webkit-font-smoothing:antialiased;
-  }
-  .accent{
-    font-family:'Instrument Serif', Georgia, serif;
-    font-style:italic;
-    color:var(--lavande);
-    font-weight:400;
+    overflow-x:hidden;
   }
   a{color:inherit;}
-  :focus-visible{outline:3px solid var(--lavande); outline-offset:3px;}
+  ::selection{background:var(--rouge); color:var(--papier);}
+  :focus-visible{outline:3px solid var(--rouge); outline-offset:3px;}
 
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .display{
+    font-family:'Fraunces', Georgia, serif;
+    font-optical-sizing:auto;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  .accent-italic{
+    font-style:italic;
+    font-weight:500;
+    color:var(--rouge);
+  }
 
-  nav{
+  .wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+
+  /* ============ MASTHEAD ============ */
+  .masthead{
+    border-bottom:1px solid var(--ligne);
+    position:sticky; top:0; background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    z-index:50;
+  }
+  .masthead-inner{
     display:flex; align-items:center; justify-content:space-between;
-    padding:24px 0;
+    padding:20px 0;
   }
-  .logo{font-weight:800; font-size:20px; letter-spacing:-0.02em;}
-  .logo span{color:var(--lavande);}
+  .wordmark{
+    font-family:'Fraunces', serif; font-weight:700; font-size:26px;
+    letter-spacing:-0.01em; text-decoration:none; display:flex; align-items:baseline; gap:2px;
+  }
+  .wordmark .dot{color:var(--rouge);}
+  .masthead-mid{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--pierre); display:none;
+  }
   .nav-link{
-    text-decoration:none; font-weight:600; font-size:14px;
-    padding:10px 18px; border-radius:999px; border:1px solid var(--bordure);
+    text-decoration:none; font-weight:600; font-size:13px;
+    padding:11px 22px; border-radius:999px; border:1.5px solid var(--encre);
+    font-family:'Space Grotesk', sans-serif;
+    transition:background .2s ease, color .2s ease;
   }
+  .nav-link:hover{background:var(--encre); color:var(--papier);}
 
+  /* ============ HERO ============ */
   .hero{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;
-    align-items:center; padding:48px 0 80px;
-    position:relative; overflow:hidden;
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--ligne);
   }
-  .blob{
-    position:absolute; border-radius:50%; filter:blur(60px); opacity:0.35; z-index:0;
+  .hero-kicker{
+    display:flex; align-items:center; gap:14px; margin-bottom:28px;
   }
-  .blob1{width:340px; height:340px; background:var(--peche); top:-120px; right:120px;}
-  .blob2{width:280px; height:280px; background:var(--sauge); bottom:-100px; left:-80px;}
+  .hero-kicker .line{flex:1; height:1px; background:var(--ligne-forte);}
+  .hero-kicker span{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--encre-soft); white-space:nowrap;
+  }
+  .hero-kicker .rouge-tag{color:var(--rouge); font-weight:600;}
 
-  .eyebrow{
-    font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--primaire); margin-bottom:14px; position:relative; z-index:1;
-  }
   h1{
-    font-size:clamp(38px, 5.2vw, 60px); line-height:1.04; margin:0 0 20px;
-    letter-spacing:-0.02em; font-weight:800; position:relative; z-index:1;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(46px, 8.4vw, 118px);
+    line-height:0.92;
+    letter-spacing:-0.015em;
+    margin:0 0 8px;
+    text-transform:uppercase;
+  }
+  h1 .row{display:block; overflow:hidden;}
+  h1 .row span{display:inline-block;}
+  h1 em{
+    font-style:italic; font-weight:500; text-transform:none; color:var(--rouge);
+  }
+
+  .hero-foot{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;
+    align-items:end; margin-top:36px;
   }
   .lede{
-    font-size:18px; line-height:1.6; color:var(--texte-muted); max-width:460px;
-    margin:0 0 32px; position:relative; z-index:1;
+    font-size:19px; line-height:1.55; color:var(--encre-soft); max-width:480px; margin:0;
   }
-  .cta-row{display:flex; gap:14px; flex-wrap:wrap; position:relative; z-index:1;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
   .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:16px 28px; border-radius:999px; font-weight:700; font-size:15px;
-    text-decoration:none; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:10px;
+    padding:17px 30px; border-radius:999px; font-weight:600; font-size:14.5px;
+    text-decoration:none; border:1.5px solid var(--encre); cursor:pointer;
+    font-family:'Space Grotesk', sans-serif;
+    transition:transform .18s ease, background .18s ease, color .18s ease;
   }
-  .btn-primary{background:var(--lavande); color:#fff; box-shadow:0 10px 24px -8px rgba(255,61,154,0.55);}
-  .btn-ghost{background:transparent; color:var(--texte); border:1px solid var(--bordure);}
+  .btn-primary{background:var(--encre); color:var(--papier);}
+  .btn-primary:hover{background:var(--rouge); border-color:var(--rouge); transform:translateY(-2px);}
+  .btn-ghost{background:transparent; color:var(--encre);}
+  .btn-ghost:hover{background:var(--encre); color:var(--papier); transform:translateY(-2px);}
 
-  .stage{
-    position:relative; height:440px; display:flex; align-items:center; justify-content:center;
+  .hero-note{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pierre);
+    line-height:1.7; border-left:2px solid var(--ligne-forte); padding-left:18px;
   }
-  .card{
-    position:absolute; width:230px; height:340px; border-radius:24px;
-    box-shadow:0 24px 48px -16px rgba(26,20,16,0.25);
-    display:flex; flex-direction:column; overflow:hidden;
-    transition:transform .5s cubic-bezier(.2,.8,.2,1);
-  }
-  .card-back{
-    background:linear-gradient(160deg, var(--peche-highlight), var(--sauge-highlight));
-    transform:rotate(-9deg) translate(-26px, 14px);
-  }
-  .card-front{
-    background:linear-gradient(160deg, var(--lavande-highlight), var(--primaire-highlight));
-    transform:rotate(6deg) translate(18px, -6px);
-  }
-  .stage:hover .card-front{transform:rotate(14deg) translate(70px,-16px);}
-  .card-body{flex:1; margin:14px; border-radius:16px; background:rgba(255,255,255,0.6);}
-  .card-tag{
-    position:absolute; top:24px; left:20px; border:3px solid var(--sauge); color:var(--texte);
-    font-weight:800; font-size:18px; padding:4px 12px; border-radius:8px; transform:rotate(-12deg);
-    background:rgba(255,255,255,0.85);
-  }
-  .card-foot{padding:0 18px 18px; font-weight:700; font-size:14px;}
-  .card-foot small{display:block; font-weight:500; color:var(--texte-muted); font-size:12px; margin-top:2px;}
+  .hero-note strong{color:var(--encre); font-weight:600;}
 
-  section{padding:64px 0;}
-  .section-head{max-width:560px; margin:0 auto 44px; text-align:center;}
-  .section-head h2{font-size:clamp(28px,3.4vw,38px); margin:0 0 12px; letter-spacing:-0.01em;}
-  .section-head p{color:var(--texte-muted); font-size:16px; line-height:1.6; margin:0;}
-
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
-  .step{padding:32px 26px; border-radius:20px; border:1px solid var(--bordure); background:var(--fond);}
-  .step-num{
-    width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:16px; color:#fff; margin-bottom:18px;
+  /* ============ WAITLIST FORM ============ */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
-  .step:nth-child(1) .step-num{background:var(--primaire);}
-  .step:nth-child(2) .step-num{background:var(--lavande);}
-  .step:nth-child(3) .step-num{background:var(--sauge);}
-  .step h3{font-size:19px; margin:0 0 8px;}
-  .step p{color:var(--texte-muted); font-size:15px; line-height:1.55; margin:0;}
+  .waitlist-form{margin-top:28px; max-width:520px;}
+  .waitlist-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .waitlist-input{
+    flex:1 1 220px; padding:16px 22px; border-radius:999px; border:1.5px solid var(--encre);
+    font-family:'Space Grotesk', sans-serif; font-size:15px; background:var(--papier); color:var(--encre);
+  }
+  .waitlist-input::placeholder{color:var(--pierre);}
+  .waitlist-input:focus-visible{outline:3px solid var(--rouge); outline-offset:2px;}
+  .waitlist-consent{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pierre);
+    line-height:1.6; margin:12px 0 0; max-width:440px;
+  }
+  .waitlist-consent a{color:var(--encre-soft); text-decoration:underline;}
+  .waitlist-msg{font-family:'IBM Plex Mono', monospace; font-size:12.5px; margin:10px 0 0; min-height:16px;}
+  .waitlist-msg.ok{color:#1B8A3E;}
+  .waitlist-msg.err{color:var(--rouge);}
+  .waitlist-form-dark .waitlist-input{border-color:#3A362F; background:#1F1C17; color:var(--papier);}
+  .waitlist-form-dark .waitlist-input::placeholder{color:#8A8377;}
+  .waitlist-form-dark .waitlist-consent{color:#8A8377;}
+  .waitlist-form-dark .waitlist-consent a{color:#C9C3B8;}
+  .waitlist-form-dark{margin:0 auto; text-align:left;}
+  .waitlist-form-dark .waitlist-row{justify-content:center;}
+  .waitlist-form-dark .waitlist-consent, .waitlist-form-dark .waitlist-msg{text-align:center;}
 
-  .features{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .feature{padding:26px 22px; border-radius:18px;}
-  .feature h4{font-size:16px; margin:0 0 6px;}
-  .feature p{font-size:13.5px; color:var(--texte-muted); margin:0; line-height:1.5;}
-  .f1{background:var(--peche-highlight);}
-  .f2{background:var(--lavande-highlight);}
-  .f3{background:var(--sauge-highlight);}
-  .f4{background:var(--primaire-highlight);}
+  /* ============ RUNNING ORDER ============ */
+  .running-order{padding:80px 0; border-bottom:1px solid var(--ligne);}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--rouge); font-weight:600; margin-bottom:14px;
+    display:block;
+  }
+  .section-head{max-width:640px; margin:0 0 52px;}
+  .section-head h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(30px,4vw,46px);
+    margin:0 0 14px; letter-spacing:-0.01em; line-height:1.05;
+  }
+  .section-head p{color:var(--encre-soft); font-size:16.5px; line-height:1.6; margin:0; max-width:480px;}
+
+  .order-list{border-top:1px solid var(--ligne);}
+  .order-item{
+    display:grid; grid-template-columns:110px 1fr 1.2fr; gap:32px;
+    padding:34px 0; border-bottom:1px solid var(--ligne); align-items:start;
+  }
+  .order-num{
+    font-family:'Fraunces', serif; font-weight:600; font-style:italic; font-size:20px; color:var(--rouge);
+  }
+  .order-item h3{
+    font-family:'Fraunces', serif; font-weight:600; font-size:26px; margin:0; letter-spacing:-0.01em;
+  }
+  .order-item p{color:var(--encre-soft); font-size:15.5px; line-height:1.6; margin:0;}
+
+  /* ============ RACK / SIGNATURE RAIL ============ */
+  .rack{padding:80px 0 90px; border-bottom:1px solid var(--ligne); background:var(--papier-alt);}
+  .rack-head{display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:8px; flex-wrap:wrap;}
+  .rack-controls{display:flex; gap:10px;}
+  .rack-btn{
+    width:44px; height:44px; border-radius:50%; border:1.5px solid var(--encre);
+    background:var(--papier); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:background .18s ease, color .18s ease;
+  }
+  .rack-btn:hover{background:var(--encre); color:var(--papier);}
+  .rack-btn svg{width:18px; height:18px;}
+
+  .rail-outer{margin-top:36px; position:relative;}
+  .rail{
+    display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x proximity;
+    padding:6px 4px 26px; cursor:grab; -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin; scrollbar-color:var(--pierre) transparent;
+  }
+  .rail:active{cursor:grabbing;}
+  .rail::-webkit-scrollbar{height:6px;}
+  .rail::-webkit-scrollbar-thumb{background:var(--ligne-forte); border-radius:99px;}
+
+  .tag-card{
+    flex:0 0 auto; width:198px; scroll-snap-align:start;
+    background:var(--papier); border:1.5px solid var(--encre);
+    border-radius:18px; padding:20px 18px 18px; position:relative;
+    user-select:none;
+  }
+  .tag-hole{
+    width:14px; height:14px; border-radius:50%; border:1.5px solid var(--encre);
+    background:var(--papier-alt); margin:0 auto 14px;
+  }
+  .tag-art{
+    height:150px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .tag-art svg{width:100%; height:100%; overflow:visible;}
+  .tag-art svg path, .tag-art svg circle, .tag-art svg line{
+    fill:none; stroke:var(--encre); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;
+  }
+  .tag-card:nth-child(2n) .tag-art svg path,
+  .tag-card:nth-child(2n) .tag-art svg circle,
+  .tag-card:nth-child(2n) .tag-art svg line{stroke:var(--rouge);}
+  .tag-name{font-family:'Fraunces', serif; font-weight:600; font-size:16px; margin:0 0 4px;}
+  .tag-price{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--pierre);}
+  .tag-dash{
+    border-top:1px dashed var(--ligne-forte); margin:12px 0;
+  }
+  .tag-cta{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--rouge); font-weight:600;
+  }
+
+  /* ============ HANGTAGS / FEATURES ============ */
+  .hangtags{padding:80px 0; border-bottom:1px solid var(--ligne);}
+  .tag-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .hangtag{
+    border:1.5px solid var(--ligne-forte); border-radius:16px; padding:26px 22px;
+    position:relative; transition:border-color .18s ease, transform .18s ease;
+  }
+  .hangtag:hover{border-color:var(--encre); transform:translateY(-3px);}
+  .hangtag-num{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pierre); margin-bottom:16px; display:block;
+  }
+  .hangtag h4{font-family:'Fraunces', serif; font-weight:600; font-size:18px; margin:0 0 8px;}
+  .hangtag p{font-size:13.5px; color:var(--encre-soft); margin:0; line-height:1.55;}
   .badge-soon{
-    display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.05em;
-    background:var(--texte); color:#fff; padding:2px 8px; border-radius:999px; margin-left:6px;
-    vertical-align:middle; text-transform:uppercase;
+    display:inline-block; font-size:9px; font-weight:700; letter-spacing:0.06em;
+    background:var(--jaune); color:var(--encre); padding:3px 8px; border-radius:999px; margin-left:6px;
+    vertical-align:middle; text-transform:uppercase; font-family:'IBM Plex Mono', monospace;
   }
 
+  /* ============ CTA BAND ============ */
   .cta-band{
-    border-radius:32px; background:var(--texte); color:#fff;
-    padding:56px 40px; text-align:center; position:relative; overflow:hidden;
+    background:var(--encre); color:var(--papier);
+    padding:100px 0; text-align:center; position:relative; overflow:hidden;
   }
-  .cta-band h2{font-size:clamp(26px,3.6vw,36px); margin:0 0 14px;}
-  .cta-band p{color:#D8CFC4; max-width:480px; margin:0 auto 28px; font-size:16px; line-height:1.6;}
-  .cta-band .btn-primary{background:var(--peche); color:var(--texte); box-shadow:none;}
+  .cta-band .section-label{color:var(--jaune);}
+  .cta-band h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,5.4vw,64px);
+    margin:0 0 20px; letter-spacing:-0.015em; line-height:1.02;
+  }
+  .cta-band h2 em{color:var(--rouge); font-style:italic; font-weight:500;}
+  .cta-band p{color:#C9C3B8; max-width:480px; margin:0 auto 34px; font-size:16.5px; line-height:1.6;}
+  .cta-band .btn-primary{background:var(--rouge); border-color:var(--rouge); color:var(--papier);}
+  .cta-band .btn-primary:hover{background:var(--papier); color:var(--encre); border-color:var(--papier);}
 
-  footer{padding:40px 0 60px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
-  footer p{font-size:13px; color:var(--texte-faint); margin:0;}
-  footer a{font-size:13px; font-weight:600; text-decoration:none; color:var(--texte-muted);}
+  /* ============ FOOTER / COLOPHON ============ */
+  footer{padding:36px 0; }
+  .colophon{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  .colophon p{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--pierre); margin:0; letter-spacing:0.02em;}
+  .colophon a{font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:500; text-decoration:none; color:var(--encre-soft);}
+  .colophon a:hover{color:var(--rouge);}
 
-  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1; transform:translateY(0);}
 
-  @media (max-width: 860px){
-    .hero{grid-template-columns:1fr; padding-top:24px;}
-    .stage{height:340px; order:-1;}
-    .steps, .features{grid-template-columns:1fr 1fr;}
+  @media (max-width: 900px){
+    .hero-foot{grid-template-columns:1fr; gap:28px;}
+    .order-item{grid-template-columns:60px 1fr; }
+    .order-item p{grid-column:1 / -1;}
+    .tag-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width: 560px){
-    .steps, .features{grid-template-columns:1fr;}
-    .cta-band{padding:40px 22px;}
+    .wrap{padding:0 20px;}
+    .tag-grid{grid-template-columns:1fr;}
+    .masthead-mid{display:none;}
+    .cta-band{padding:70px 0;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    .card, .reveal{transition:none;}
+    .reveal{transition:none; opacity:1; transform:none;}
+    .btn, .hangtag{transition:none;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <nav>
-    <div class="logo">KA <span>Store</span></div>
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="#top">KA STORE<span class="dot">.</span></a>
+    <span class="masthead-mid mono">ESSAYAGE VIRTUEL — ÉDITION 01</span>
     <a class="nav-link" href="https://github.com/katanja300824-dotcom/ka-store" target="_blank" rel="noopener">Voir le projet</a>
-  </nav>
-</div>
+  </div>
+</header>
 
-<div class="wrap">
-  <section class="hero" style="padding-top:24px;">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div>
-      <div class="eyebrow">Essayage virtuel par IA</div>
-      <h1>Compose ta <span class="accent">tenue</span>, swipe par swipe.</h1>
-      <p class="lede">Choisis ton haut, ton bas, tes chaussures comme tu swipes tes séries préférées. KA Store te montre le résultat directement sur toi — avant même d'acheter.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:katanja300824@gmail.com?subject=Je%20veux%20tester%20KA%20Store">Rejoindre la liste d'attente</a>
-        <a class="btn btn-ghost" href="#comment-ca-marche">Voir comment ça marche</a>
-      </div>
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="hero-kicker">
+      <span class="rouge-tag mono">● EN TEST FERMÉ</span>
+      <div class="line" aria-hidden="true"></div>
+      <span class="mono">ESSAYAGE VIRTUEL PAR IA</span>
     </div>
-    <div class="stage">
-      <div class="card card-back">
-        <div class="card-body"></div>
-        <div class="card-foot">Pull sauge<small>44,99 €</small></div>
+
+    <h1>
+      <span class="row reveal-word"><span>Compose</span></span>
+      <span class="row reveal-word"><span>ta tenue,</span></span>
+      <span class="row reveal-word"><span><em>swipe</em> par swipe.</span></span>
+    </h1>
+
+    <div class="hero-foot">
+      <div>
+        <p class="lede">Choisis ton haut, ton bas, tes chaussures comme tu swipes tes séries préférées. KA Store te montre le résultat directement sur toi — avant même d'acheter.</p>
+        <form class="waitlist-form" data-endpoint="https://formspree.io/f/VOTRE_ID_FORMSPREE" data-source="hero">
+          <div class="waitlist-row">
+            <label class="sr-only" for="email-hero">Ton adresse email</label>
+            <input class="waitlist-input" type="email" id="email-hero" name="email" placeholder="ton@email.com" required autocomplete="email">
+            <button class="btn btn-primary" type="submit">Rejoindre la liste d'attente</button>
+          </div>
+          <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="waitlist-consent">En t'inscrivant, tu acceptes d'être recontacté·e par email au sujet du lancement. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+          <p class="waitlist-msg" role="status" aria-live="polite"></p>
+        </form>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="#comment-ca-marche">Voir comment ça marche</a>
+        </div>
       </div>
-      <div class="card card-front">
-        <div class="card-tag">J'AIME</div>
-        <div class="card-body"></div>
-        <div class="card-foot">Jean droit bleu<small>49,99 €</small></div>
-      </div>
+      <p class="hero-note">
+        <strong>01 —</strong> Une photo en pied<br>
+        <strong>02 —</strong> Tu swipes chaque pièce<br>
+        <strong>03 —</strong> L'IA t'habille à l'écran
+      </p>
     </div>
   </section>
-</div>
 
-<div class="wrap" id="comment-ca-marche">
-  <section>
+  <section class="running-order wrap" id="comment-ca-marche">
     <div class="section-head reveal">
-      <h2>Trois gestes, une tenue complète</h2>
+      <span class="section-label">Running order</span>
+      <h2>Trois gestes, une tenue complète.</h2>
       <p>Pas de formulaire interminable. Tu montres qui tu es, tu swipes, tu te vois habillé·e.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">1</div>
+    <div class="order-list">
+      <div class="order-item reveal">
+        <span class="order-num display">01</span>
         <h3>Ta photo</h3>
         <p>Une photo en pied, et l'app connaît ta silhouette pour tous tes essayages à venir.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-num">2</div>
+      <div class="order-item reveal">
+        <span class="order-num display">02</span>
         <h3>Tu swipes</h3>
         <p>Par zone — couvre-tête, haut, bas, chaussures — dans l'ordre que tu veux, au budget que tu fixes.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-num">3</div>
+      <div class="order-item reveal">
+        <span class="order-num display">03</span>
         <h3>Tu te vois</h3>
         <p>L'IA assemble la tenue complète sur ta photo. Ce que tu vois, c'est (presque) ce que tu portes.</p>
       </div>
     </div>
   </section>
-</div>
 
-<div class="wrap">
-  <section>
-    <div class="section-head reveal">
-      <h2>Ce qui rend KA Store différent</h2>
+  <section class="rack" aria-label="Aperçu du portant swipable">
+    <div class="wrap">
+      <div class="rack-head reveal">
+        <div>
+          <span class="section-label">Le portant</span>
+          <h2 class="display" style="font-size:clamp(28px,3.6vw,40px); font-weight:600; margin:0; letter-spacing:-0.01em;">Fais glisser, comme dans l'app.</h2>
+        </div>
+        <div class="rack-controls">
+          <button class="rack-btn" id="rail-prev" aria-label="Article précédent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="rack-btn" id="rail-next" aria-label="Article suivant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="rail-outer reveal">
+        <div class="rail" id="rail" tabindex="0" role="region" aria-label="Portant d'articles, glisser horizontalement">
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M30 18 L14 30 L22 42 L30 36 L30 86 L70 86 L70 36 L78 42 L86 30 L70 18 L58 26 L42 26 Z"/></svg>
+            </div>
+            <p class="tag-name">T-shirt oversize</p>
+            <p class="tag-price mono">24,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M32 14 L68 14 L70 40 L84 84 L68 88 L54 50 L50 50 L36 88 L20 84 L34 40 Z"/><line x1="32" y1="14" x2="34" y2="40"/><line x1="68" y1="14" x2="66" y2="40"/></svg>
+            </div>
+            <p class="tag-name">Jean droit bleu</p>
+            <p class="tag-price mono">49,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M12 58 L20 40 L34 36 L36 44 L54 44 L66 30 L82 36 L86 58 L86 66 L12 66 Z"/><path d="M12 66 Q 20 72 30 66"/><path d="M40 66 Q 48 72 58 66"/><path d="M68 66 Q 76 72 84 66"/></svg>
+            </div>
+            <p class="tag-name">Sneakers blanches</p>
+            <p class="tag-price mono">79,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M40 15 L32 22 L14 30 L22 44 L32 39 L32 88 L68 88 L68 39 L78 44 L86 30 L68 22 L60 15 L54 22 L46 22 Z"/><path d="M40 15 L46 26 L50 22 L54 26 L60 15"/><line x1="32" y1="39" x2="32" y2="88"/><line x1="68" y1="39" x2="68" y2="88"/></svg>
+            </div>
+            <p class="tag-name">Veste structurée</p>
+            <p class="tag-price mono">89,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M40 12 L40 22 M60 12 L60 22"/><path d="M36 22 Q 50 32 64 22 L 68 40 Q 50 48 32 40 Z"/><path d="M32 40 L18 86 L82 86 L68 40"/><path d="M50 48 L50 86" opacity="0.5"/></svg>
+            </div>
+            <p class="tag-name">Robe portefeuille</p>
+            <p class="tag-price mono">54,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+          <article class="tag-card">
+            <div class="tag-hole" aria-hidden="true"></div>
+            <div class="tag-art" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><path d="M30 40 Q 30 20 50 20 Q 70 20 70 40" /><path d="M18 40 L82 40 L78 84 L22 84 Z"/></svg>
+            </div>
+            <p class="tag-name">Sac bandoulière</p>
+            <p class="tag-price mono">39,99 €</p>
+            <div class="tag-dash" aria-hidden="true"></div>
+            <span class="tag-cta">Swipe →</span>
+          </article>
+
+        </div>
+      </div>
     </div>
-    <div class="features">
-      <div class="feature f1 reveal">
+  </section>
+
+  <section class="hangtags wrap">
+    <div class="section-head reveal">
+      <span class="section-label">Fiche technique</span>
+      <h2>Ce qui rend KA Store différent.</h2>
+    </div>
+    <div class="tag-grid">
+      <div class="hangtag reveal">
+        <span class="hangtag-num mono">— 01</span>
         <h4>Essayage réaliste</h4>
         <p>Rendu IA haute fidélité, articles, chaussures et accessoires compris.</p>
       </div>
-      <div class="feature f2 reveal">
+      <div class="hangtag reveal">
+        <span class="hangtag-num mono">— 02</span>
         <h4>Swipe par zone</h4>
         <p>Chaque pièce de la tenue se choisit indépendamment, à ton rythme.</p>
       </div>
-      <div class="feature f3 reveal">
+      <div class="hangtag reveal">
+        <span class="hangtag-num mono">— 03</span>
         <h4>Vidéo animée<span class="badge-soon">Bientôt</span></h4>
         <p>Ta tenue qui prend vie, comme un mannequin qui défile pour toi.</p>
       </div>
-      <div class="feature f4 reveal">
+      <div class="hangtag reveal">
+        <span class="hangtag-num mono">— 04</span>
         <h4>Achat direct</h4>
         <p>Chaque pièce validée renvoie droit vers le site du vendeur.</p>
       </div>
     </div>
   </section>
-</div>
 
-<div class="wrap">
-  <section>
-    <div class="cta-band reveal">
-      <h2>On construit KA Store en ce moment</h2>
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <span class="section-label">Prochain numéro</span>
+      <h2>On construit KA Store <em>en ce moment.</em></h2>
       <p>L'app est en test fermé avant sa sortie publique. Écris-nous pour faire partie des premiers à l'essayer.</p>
-      <a class="btn btn-primary" href="mailto:katanja300824@gmail.com?subject=Je%20veux%20tester%20KA%20Store">Demander un accès anticipé</a>
+      <form class="waitlist-form waitlist-form-dark" data-endpoint="https://formspree.io/f/VOTRE_ID_FORMSPREE" data-source="cta-band">
+        <div class="waitlist-row">
+          <label class="sr-only" for="email-cta">Ton adresse email</label>
+          <input class="waitlist-input" type="email" id="email-cta" name="email" placeholder="ton@email.com" required autocomplete="email">
+          <button class="btn btn-primary" type="submit">Demander un accès anticipé</button>
+        </div>
+        <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="waitlist-consent">En t'inscrivant, tu acceptes d'être recontacté·e par email. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        <p class="waitlist-msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
-</div>
 
-<div class="wrap">
-  <footer>
-    <p>© 2026 KA Store. Projet indépendant, développé par KA.</p>
-    <a href="https://github.com/katanja300824-dotcom/ka-store" target="_blank" rel="noopener">GitHub</a>
-  </footer>
-</div>
+</main>
+
+<footer>
+  <div class="wrap colophon">
+    <p>© 2026 KA STORE — PROJET INDÉPENDANT, DÉVELOPPÉ PAR KA</p>
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a href="https://github.com/katanja300824-dotcom/ka-store" target="_blank" rel="noopener">GITHUB ↗</a>
+    </div>
+  </div>
+</footer>
 
 <script>
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Scroll reveal
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
     const items = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
     items.forEach(el => io.observe(el));
+
+    // Hero headline word-by-word entrance
+    document.querySelectorAll('.reveal-word span').forEach((el, i) => {
+      el.style.transform = 'translateY(110%)';
+      el.style.opacity = '0';
+      el.style.transition = 'transform .8s cubic-bezier(.2,.8,.2,1), opacity .8s ease';
+      el.style.transitionDelay = (i * 0.12) + 's';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.style.transform = 'translateY(0)';
+        el.style.opacity = '1';
+      }));
+    });
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
+
+  // Draggable rail (mouse + touch works natively via overflow-x, this adds click-drag for desktop mouse)
+  const rail = document.getElementById('rail');
+  let isDown = false, startX, scrollLeft;
+
+  rail.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - rail.offsetLeft;
+    scrollLeft = rail.scrollLeft;
+  });
+  window.addEventListener('mouseup', () => { isDown = false; });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - rail.offsetLeft;
+    const walk = (x - startX) * 1.4;
+    rail.scrollLeft = scrollLeft - walk;
+  });
+
+  const cardWidth = 220;
+  document.getElementById('rail-prev').addEventListener('click', () => {
+    rail.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  });
+  document.getElementById('rail-next').addEventListener('click', () => {
+    rail.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  });
+
+  // Waitlist forms → Formspree
+  document.querySelectorAll('.waitlist-form').forEach((form) => {
+    const msg = form.querySelector('.waitlist-msg');
+    const btn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const endpoint = form.dataset.endpoint;
+      const data = new FormData(form);
+      if (data.get('_gotcha')) return; // honeypot triggered, silently drop
+      btn.disabled = true;
+      const originalLabel = btn.textContent;
+      btn.textContent = 'Envoi...';
+      msg.textContent = '';
+      msg.className = 'waitlist-msg';
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+        if (res.ok) {
+          msg.textContent = 'C\'est noté — on te recontacte dès l\'ouverture ✓';
+          msg.classList.add('ok');
+          form.reset();
+        } else {
+          throw new Error('bad response');
+        }
+      } catch (err) {
+        msg.textContent = 'Oups, l\'envoi a échoué. Écris-nous directement à katanja300824@gmail.com';
+        msg.classList.add('err');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
 </script>
 
 </body>
