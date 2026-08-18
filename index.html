@@ -3,683 +3,1824 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KA Store — Essayage virtuel par IA | Compose ta tenue, swipe par swipe</title>
-<meta name="description" content="KA Store est l'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter. Swipe ton haut, ton bas, tes chaussures — l'IA fait le reste.">
-<meta name="keywords" content="essayage virtuel, essayage IA, application mode, try-on virtuel, shopping IA, KA Store">
-<meta name="author" content="KA">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#FF2400">
-<link rel="canonical" href="https://katanja300824-dotcom.github.io/ka-store-site/">
-
-<!-- Favicons -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://katanja300824-dotcom.github.io/ka-store-site/">
-<meta property="og:site_name" content="KA Store">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="KA Store — Compose ta tenue, swipe par swipe">
-<meta property="og:description" content="L'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter. Swipe ton haut, ton bas, tes chaussures — l'IA fait le reste.">
-<meta property="og:image" content="https://katanja300824-dotcom.github.io/ka-store-site/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="KA Store — Compose ta tenue, swipe par swipe">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KA Store — Compose ta tenue, swipe par swipe">
-<meta name="twitter:description" content="L'app d'essayage virtuel qui te montre tes tenues directement sur toi, avant d'acheter.">
-<meta name="twitter:image" content="https://katanja300824-dotcom.github.io/ka-store-site/og-image.png">
-<meta name="twitter:image:alt" content="KA Store — Compose ta tenue, swipe par swipe">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- Structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "KA Store",
-  "url": "https://katanja300824-dotcom.github.io/ka-store-site/",
-  "description": "Application d'essayage virtuel par IA. Swipe pour composer ta tenue et vois le résultat directement sur toi avant d'acheter.",
-  "applicationCategory": "ShoppingApplication",
-  "operatingSystem": "Android",
-  "inLanguage": "fr-FR",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  }
-}
-</script>
+<title>HELP — Espace Mairie</title>
 <style>
-  :root{
-    --papier:#FFFFFF;
-    --papier-alt:#FBFAF8;
-    --encre:#14120F;
-    --encre-soft:#3A362F;
-    --rouge:#FF2400;
-    --rouge-dim:#D91E00;
-    --bleu:#1435FF;
-    --jaune:#FFE600;
-    --pierre:#A69C8E;
-    --ligne:#E7E2D8;
-    --ligne-forte:#D8D1C2;
+  :root {
+    --jaune: #FFD500;
+    --jaune-soft: #FFE066;
+    --jaune-dim: rgba(255,213,0,0.10);
+    --jaune-border: rgba(255,213,0,0.28);
+    --rouge: #F04438;
+    --rouge-dim: rgba(240,68,56,0.12);
+    --vert: #12B76A;
+    --vert-dim: rgba(18,183,106,0.12);
+    --bleu: #53B1FD;
+    --bleu-dim: rgba(83,177,253,0.12);
+    --orange: #FF9F43;
+    --orange-dim: rgba(255,159,67,0.12);
+    --bg: #060606;
+    --bg2: #121212;
+    --bg3: #191919;
+    --bg4: #232323;
+    --texte: #F2F2F0;
+    --texte-dim: #8C8C8C;
+    --texte-faint: #5C5C5C;
+    --border: #262626;
+    --border-soft: #1c1c1c;
+    --radius: 14px;
+    --radius-sm: 9px;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
+    --shadow-pop: 0 20px 60px -12px rgba(0,0,0,0.7);
+    --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: 'SF Mono', 'Roboto Mono', Consolas, monospace;
+    --ease: cubic-bezier(.2,.8,.2,1);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--papier);
-    color:var(--encre);
-    font-family:'Space Grotesk', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   }
-  a{color:inherit;}
-  ::selection{background:var(--rouge); color:var(--papier);}
-  :focus-visible{outline:3px solid var(--rouge); outline-offset:3px;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; }
+  body {
+    background:
+      radial-gradient(circle at 15% 0%, rgba(255,213,0,0.05) 0%, transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(255,213,0,0.03) 0%, transparent 40%),
+      var(--bg);
+    color: var(--texte);
+    font-family: var(--font);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.1px;
+  }
+  ::selection { background: rgba(255,213,0,0.25); }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 10px; border: 2px solid var(--bg); }
+  ::-webkit-scrollbar-thumb:hover { background: #333; }
+  :focus-visible { outline: 2px solid var(--jaune); outline-offset: 2px; border-radius: 4px; }
 
-  .display{
-    font-family:'Fraunces', Georgia, serif;
-    font-optical-sizing:auto;
+  /* ===================== LOGIN ===================== */
+  #login-screen {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
   }
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.02em;
+  #login-screen::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 700px 500px at 50% 20%, rgba(255,213,0,0.07) 0%, transparent 65%),
+      repeating-linear-gradient(0deg, transparent 0 39px, rgba(255,255,255,0.012) 39px 40px),
+      repeating-linear-gradient(90deg, transparent 0 39px, rgba(255,255,255,0.012) 39px 40px);
+    pointer-events: none;
   }
-  .accent-italic{
-    font-style:italic;
-    font-weight:500;
-    color:var(--rouge);
+  .login-box {
+    position: relative; background: linear-gradient(180deg, var(--bg2), var(--bg3));
+    border: 1px solid var(--jaune-border); border-radius: 20px; padding: 44px 40px;
+    width: 100%; max-width: 396px; text-align: center; box-shadow: var(--shadow-pop);
+    animation: rise 0.5s var(--ease);
   }
-
-  .wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
-
-  /* ============ MASTHEAD ============ */
-  .masthead{
-    border-bottom:1px solid var(--ligne);
-    position:sticky; top:0; background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(10px);
-    z-index:50;
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .login-mark {
+    width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 16px;
+    background: linear-gradient(155deg, var(--jaune), #E6BE00);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px -6px rgba(255,213,0,0.35);
   }
-  .masthead-inner{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 0;
+  .login-mark svg { width: 28px; height: 28px; }
+  .login-logo { font-size: 26px; font-weight: 800; color: var(--texte); letter-spacing: 5px; margin-bottom: 6px; }
+  .login-subtitle { color: var(--texte-dim); font-size: 12.5px; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 32px; }
+  .input-wrap { position: relative; margin-bottom: 12px; }
+  .input-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: 0.45; pointer-events: none; }
+  .login-box input {
+    width: 100%; background: var(--bg4); border: 1px solid var(--border); border-radius: 10px;
+    color: var(--texte); padding: 13px 16px 13px 40px; font-size: 14px; outline: none;
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
   }
-  .wordmark{
-    font-family:'Fraunces', serif; font-weight:700; font-size:26px;
-    letter-spacing:-0.01em; text-decoration:none; display:flex; align-items:baseline; gap:2px;
+  .login-box input:focus { border-color: var(--jaune); background: #1a1a1a; }
+  .login-box input::placeholder { color: var(--texte-faint); }
+  .btn-login {
+    width: 100%; background: linear-gradient(155deg, var(--jaune-soft), var(--jaune));
+    color: #100C00; border: none; border-radius: 10px; padding: 14px; font-size: 14.5px; font-weight: 700;
+    cursor: pointer; margin-top: 10px; transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+    box-shadow: 0 6px 18px -4px rgba(255,213,0,0.3);
   }
-  .wordmark .dot{color:var(--rouge);}
-  .masthead-mid{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--pierre); display:none;
-  }
-  .nav-link{
-    text-decoration:none; font-weight:600; font-size:13px;
-    padding:11px 22px; border-radius:999px; border:1.5px solid var(--encre);
-    font-family:'Space Grotesk', sans-serif;
-    transition:background .2s ease, color .2s ease;
-  }
-  .nav-link:hover{background:var(--encre); color:var(--papier);}
-
-  /* ============ HERO ============ */
-  .hero{
-    padding:64px 0 40px;
-    border-bottom:1px solid var(--ligne);
-  }
-  .hero-kicker{
-    display:flex; align-items:center; gap:14px; margin-bottom:28px;
-  }
-  .hero-kicker .line{flex:1; height:1px; background:var(--ligne-forte);}
-  .hero-kicker span{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--encre-soft); white-space:nowrap;
-  }
-  .hero-kicker .rouge-tag{color:var(--rouge); font-weight:600;}
-
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:clamp(46px, 8.4vw, 118px);
-    line-height:0.92;
-    letter-spacing:-0.015em;
-    margin:0 0 8px;
-    text-transform:uppercase;
-  }
-  h1 .row{display:block; overflow:hidden;}
-  h1 .row span{display:inline-block;}
-  h1 em{
-    font-style:italic; font-weight:500; text-transform:none; color:var(--rouge);
-  }
-
-  .hero-foot{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;
-    align-items:end; margin-top:36px;
-  }
-  .lede{
-    font-size:19px; line-height:1.55; color:var(--encre-soft); max-width:480px; margin:0;
-  }
-  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:17px 30px; border-radius:999px; font-weight:600; font-size:14.5px;
-    text-decoration:none; border:1.5px solid var(--encre); cursor:pointer;
-    font-family:'Space Grotesk', sans-serif;
-    transition:transform .18s ease, background .18s ease, color .18s ease;
-  }
-  .btn-primary{background:var(--encre); color:var(--papier);}
-  .btn-primary:hover{background:var(--rouge); border-color:var(--rouge); transform:translateY(-2px);}
-  .btn-ghost{background:transparent; color:var(--encre);}
-  .btn-ghost:hover{background:var(--encre); color:var(--papier); transform:translateY(-2px);}
-
-  .hero-note{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pierre);
-    line-height:1.7; border-left:2px solid var(--ligne-forte); padding-left:18px;
-  }
-  .hero-note strong{color:var(--encre); font-weight:600;}
-
-  /* ============ WAITLIST FORM ============ */
-  .sr-only{
-    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
-    clip:rect(0,0,0,0); white-space:nowrap; border:0;
-  }
-  .waitlist-form{margin-top:28px; max-width:520px;}
-  .waitlist-row{display:flex; gap:10px; flex-wrap:wrap;}
-  .waitlist-input{
-    flex:1 1 220px; padding:16px 22px; border-radius:999px; border:1.5px solid var(--encre);
-    font-family:'Space Grotesk', sans-serif; font-size:15px; background:var(--papier); color:var(--encre);
-  }
-  .waitlist-input::placeholder{color:var(--pierre);}
-  .waitlist-input:focus-visible{outline:3px solid var(--rouge); outline-offset:2px;}
-  .waitlist-consent{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pierre);
-    line-height:1.6; margin:12px 0 0; max-width:440px;
-  }
-  .waitlist-consent a{color:var(--encre-soft); text-decoration:underline;}
-  .waitlist-msg{font-family:'IBM Plex Mono', monospace; font-size:12.5px; margin:10px 0 0; min-height:16px;}
-  .waitlist-msg.ok{color:#1B8A3E;}
-  .waitlist-msg.err{color:var(--rouge);}
-  .waitlist-form-dark .waitlist-input{border-color:#3A362F; background:#1F1C17; color:var(--papier);}
-  .waitlist-form-dark .waitlist-input::placeholder{color:#8A8377;}
-  .waitlist-form-dark .waitlist-consent{color:#8A8377;}
-  .waitlist-form-dark .waitlist-consent a{color:#C9C3B8;}
-  .waitlist-form-dark{margin:0 auto; text-align:left;}
-  .waitlist-form-dark .waitlist-row{justify-content:center;}
-  .waitlist-form-dark .waitlist-consent, .waitlist-form-dark .waitlist-msg{text-align:center;}
-
-  /* ============ RUNNING ORDER ============ */
-  .running-order{padding:80px 0; border-bottom:1px solid var(--ligne);}
-  .section-label{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--rouge); font-weight:600; margin-bottom:14px;
-    display:block;
-  }
-  .section-head{max-width:640px; margin:0 0 52px;}
-  .section-head h2{
-    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(30px,4vw,46px);
-    margin:0 0 14px; letter-spacing:-0.01em; line-height:1.05;
-  }
-  .section-head p{color:var(--encre-soft); font-size:16.5px; line-height:1.6; margin:0; max-width:480px;}
-
-  .order-list{border-top:1px solid var(--ligne);}
-  .order-item{
-    display:grid; grid-template-columns:110px 1fr 1.2fr; gap:32px;
-    padding:34px 0; border-bottom:1px solid var(--ligne); align-items:start;
-  }
-  .order-num{
-    font-family:'Fraunces', serif; font-weight:600; font-style:italic; font-size:20px; color:var(--rouge);
-  }
-  .order-item h3{
-    font-family:'Fraunces', serif; font-weight:600; font-size:26px; margin:0; letter-spacing:-0.01em;
-  }
-  .order-item p{color:var(--encre-soft); font-size:15.5px; line-height:1.6; margin:0;}
-
-  /* ============ RACK / SIGNATURE RAIL ============ */
-  .rack{padding:80px 0 90px; border-bottom:1px solid var(--ligne); background:var(--papier-alt);}
-  .rack-head{display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:8px; flex-wrap:wrap;}
-  .rack-controls{display:flex; gap:10px;}
-  .rack-btn{
-    width:44px; height:44px; border-radius:50%; border:1.5px solid var(--encre);
-    background:var(--papier); display:flex; align-items:center; justify-content:center;
-    cursor:pointer; transition:background .18s ease, color .18s ease;
-  }
-  .rack-btn:hover{background:var(--encre); color:var(--papier);}
-  .rack-btn svg{width:18px; height:18px;}
-
-  .rail-outer{margin-top:36px; position:relative;}
-  .rail{
-    display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x proximity;
-    padding:6px 4px 26px; cursor:grab; -webkit-overflow-scrolling:touch;
-    scrollbar-width:thin; scrollbar-color:var(--pierre) transparent;
-  }
-  .rail:active{cursor:grabbing;}
-  .rail::-webkit-scrollbar{height:6px;}
-  .rail::-webkit-scrollbar-thumb{background:var(--ligne-forte); border-radius:99px;}
-
-  .tag-card{
-    flex:0 0 auto; width:198px; scroll-snap-align:start;
-    background:var(--papier); border:1.5px solid var(--encre);
-    border-radius:18px; padding:20px 18px 18px; position:relative;
-    user-select:none;
-  }
-  .tag-hole{
-    width:14px; height:14px; border-radius:50%; border:1.5px solid var(--encre);
-    background:var(--papier-alt); margin:0 auto 14px;
-  }
-  .tag-art{
-    height:150px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;
-  }
-  .tag-art svg{width:100%; height:100%; overflow:visible;}
-  .tag-art svg path, .tag-art svg circle, .tag-art svg line{
-    fill:none; stroke:var(--encre); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;
-  }
-  .tag-card:nth-child(2n) .tag-art svg path,
-  .tag-card:nth-child(2n) .tag-art svg circle,
-  .tag-card:nth-child(2n) .tag-art svg line{stroke:var(--rouge);}
-  .tag-name{font-family:'Fraunces', serif; font-weight:600; font-size:16px; margin:0 0 4px;}
-  .tag-price{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--pierre);}
-  .tag-dash{
-    border-top:1px dashed var(--ligne-forte); margin:12px 0;
-  }
-  .tag-cta{
-    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--rouge); font-weight:600;
+  .btn-login:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -4px rgba(255,213,0,0.4); }
+  .btn-login:active { transform: translateY(0); }
+  .btn-login:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .login-error {
+    color: var(--rouge); font-size: 12.5px; margin-top: 14px; display: none;
+    background: var(--rouge-dim); border: 1px solid rgba(240,68,56,0.25); border-radius: 8px; padding: 9px 12px;
   }
 
-  /* ============ HANGTAGS / FEATURES ============ */
-  .hangtags{padding:80px 0; border-bottom:1px solid var(--ligne);}
-  .tag-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .hangtag{
-    border:1.5px solid var(--ligne-forte); border-radius:16px; padding:26px 22px;
-    position:relative; transition:border-color .18s ease, transform .18s ease;
+  /* ===================== SHELL ===================== */
+  #app { display: none; flex-direction: column; min-height: 100vh; }
+  header {
+    background: rgba(18,18,18,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft); padding: 0 28px; height: 60px;
+    display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;
   }
-  .hangtag:hover{border-color:var(--encre); transform:translateY(-3px);}
-  .hangtag-num{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pierre); margin-bottom:16px; display:block;
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .logo-mark {
+    width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(155deg, var(--jaune-soft), var(--jaune));
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .hangtag h4{font-family:'Fraunces', serif; font-weight:600; font-size:18px; margin:0 0 8px;}
-  .hangtag p{font-size:13.5px; color:var(--encre-soft); margin:0; line-height:1.55;}
-  .badge-soon{
-    display:inline-block; font-size:9px; font-weight:700; letter-spacing:0.06em;
-    background:var(--jaune); color:var(--encre); padding:3px 8px; border-radius:999px; margin-left:6px;
-    vertical-align:middle; text-transform:uppercase; font-family:'IBM Plex Mono', monospace;
+  .logo-mark svg { width: 17px; height: 17px; }
+  .logo { font-size: 15px; font-weight: 800; color: var(--texte); letter-spacing: 2.5px; }
+  .mairie-name {
+    font-size: 13px; color: var(--texte-dim); border-left: 1px solid var(--border); padding-left: 16px;
+    letter-spacing: 0.2px; display: flex; align-items: center; gap: 6px;
+  }
+  .header-right { display: flex; align-items: center; gap: 18px; }
+  .badge-actif { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--vert); font-weight: 500; }
+  .dot-vert { width: 7px; height: 7px; background: var(--vert); border-radius: 50%; box-shadow: 0 0 0 3px var(--vert-dim); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.45; } }
+  #clock { font-family: var(--font-mono); font-size: 12px; color: var(--texte-dim); letter-spacing: 0.3px; }
+  .btn-deconnexion {
+    background: none; border: 1px solid var(--border); color: var(--texte-dim); padding: 7px 14px; border-radius: 8px;
+    font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.18s var(--ease); display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-deconnexion:hover { border-color: var(--rouge); color: var(--rouge); background: var(--rouge-dim); }
+
+  nav {
+    background: var(--bg2); border-bottom: 1px solid var(--border-soft); display: flex; gap: 4px; padding: 10px 28px;
+  }
+  .nav-tab {
+    padding: 9px 16px; font-size: 12.5px; font-weight: 600; color: var(--texte-dim); cursor: pointer;
+    border-radius: 9px; transition: color 0.18s var(--ease), background 0.18s var(--ease);
+    letter-spacing: 0.2px; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;
+    position: relative;
+  }
+  .nav-tab svg { width: 15px; height: 15px; opacity: 0.75; flex-shrink: 0; }
+  .nav-tab:hover { color: var(--texte); background: var(--bg3); }
+  .nav-tab.active { color: #100C00; background: var(--jaune); }
+  .nav-tab.active svg { opacity: 1; }
+  .nav-tab.active:hover { background: var(--jaune); }
+  .nav-tab-count {
+    background: var(--rouge); color: #fff; font-size: 10px; font-weight: 800; min-width: 17px; height: 17px;
+    border-radius: 9px; display: none; align-items: center; justify-content: center; padding: 0 4px; line-height: 1;
+  }
+  .nav-tab-count.show { display: inline-flex; }
+  .nav-tab.active .nav-tab-count { background: #100C00; color: var(--jaune); }
+
+  main { flex: 1; padding: 28px; max-width: 1440px; margin: 0 auto; width: 100%; }
+  .view { display: none; animation: fadein 0.3s var(--ease); }
+  .view.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ===================== STATS ===================== */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card {
+    position: relative; background: var(--bg2); border: 1px solid var(--border-soft); border-radius: var(--radius);
+    padding: 20px 22px; box-shadow: var(--shadow-card); overflow: hidden;
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  .stat-card:hover { transform: translateY(-2px); border-color: var(--border); }
+  .stat-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; opacity: 0.7;
+    background: var(--accent, var(--jaune));
+  }
+  .stat-card .stat-icon {
+    width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; background: var(--accent-dim, var(--jaune-dim));
+  }
+  .stat-card .stat-icon svg { width: 17px; height: 17px; color: var(--accent, var(--jaune)); }
+  .stat-val { font-size: 32px; font-weight: 800; line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px; }
+  .stat-val.jaune { color: var(--jaune); }
+  .stat-val.vert { color: var(--vert); }
+  .stat-val.rouge { color: var(--rouge); }
+  .stat-val.blanc { color: var(--texte); }
+  .stat-label { font-size: 11.5px; color: var(--texte-dim); text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; }
+
+  /* ===================== TOOLBAR ===================== */
+  .toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .toolbar .search-wrap { position: relative; }
+  .toolbar .search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.4; pointer-events: none; }
+  .toolbar input, .toolbar select {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--texte);
+    padding: 9px 14px; font-size: 13px; outline: none; transition: border-color 0.18s var(--ease); font-family: var(--font);
+  }
+  .toolbar input:focus, .toolbar select:focus { border-color: var(--jaune); }
+  .toolbar input::placeholder { color: var(--texte-faint); }
+  .toolbar input#search-input { width: 230px; padding-left: 36px; }
+  .toolbar select { cursor: pointer; }
+  .toolbar-spacer { flex: 1; }
+
+  .btn {
+    padding: 9px 17px; border-radius: var(--radius-sm); font-size: 12.5px; font-weight: 600; cursor: pointer;
+    border: none; transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s var(--ease), border-color 0.15s var(--ease);
+    display: inline-flex; align-items: center; gap: 7px; font-family: var(--font); white-space: nowrap;
+  }
+  .btn svg { width: 14px; height: 14px; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-primary { background: linear-gradient(155deg, var(--jaune-soft), var(--jaune)); color: #100C00; box-shadow: 0 4px 14px -4px rgba(255,213,0,0.3); }
+  .btn-primary:hover { box-shadow: 0 8px 20px -4px rgba(255,213,0,0.4); }
+  .btn-secondary { background: var(--bg3); color: var(--texte); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: var(--bg4); border-color: #3a3a3a; }
+  .btn-danger { background: var(--rouge); color: #fff; box-shadow: 0 4px 14px -4px rgba(240,68,56,0.35); }
+  .btn-danger:hover { box-shadow: 0 8px 20px -4px rgba(240,68,56,0.45); }
+  .btn-vert { background: var(--vert); color: #fff; box-shadow: 0 4px 14px -4px rgba(18,183,106,0.35); }
+  .btn-vert:hover { box-shadow: 0 8px 20px -4px rgba(18,183,106,0.45); }
+  .btn-sm { padding: 6px 13px; font-size: 12px; }
+
+  /* ===================== TABLE ===================== */
+  .table-wrap { background: var(--bg2); border: 1px solid var(--border-soft); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left; padding: 13px 16px; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.7px; color: var(--texte-dim); background: var(--bg3); border-bottom: 1px solid var(--border-soft);
+  }
+  tbody tr { border-bottom: 1px solid var(--border-soft); transition: background 0.15s var(--ease); cursor: pointer; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--bg3); }
+  tbody td { padding: 13px 16px; font-size: 13px; vertical-align: middle; }
+
+  tr.row-alerte-active { position: relative; }
+  tr.row-alerte-active td:first-child::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--rouge);
   }
 
-  /* ============ CTA BAND ============ */
-  .cta-band{
-    background:var(--encre); color:var(--papier);
-    padding:100px 0; text-align:center; position:relative; overflow:hidden;
+  .person-cell { display: flex; align-items: center; gap: 11px; }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 11.5px; font-weight: 700; flex-shrink: 0; color: #100C00;
   }
-  .cta-band .section-label{color:var(--jaune);}
-  .cta-band h2{
-    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,5.4vw,64px);
-    margin:0 0 20px; letter-spacing:-0.015em; line-height:1.02;
-  }
-  .cta-band h2 em{color:var(--rouge); font-style:italic; font-weight:500;}
-  .cta-band p{color:#C9C3B8; max-width:480px; margin:0 auto 34px; font-size:16.5px; line-height:1.6;}
-  .cta-band .btn-primary{background:var(--rouge); border-color:var(--rouge); color:var(--papier);}
-  .cta-band .btn-primary:hover{background:var(--papier); color:var(--encre); border-color:var(--papier);}
 
-  /* ============ FOOTER / COLOPHON ============ */
-  footer{padding:36px 0; }
-  .colophon{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 20px; font-size: 10.5px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
   }
-  .colophon p{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--pierre); margin:0; letter-spacing:0.02em;}
-  .colophon a{font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:500; text-decoration:none; color:var(--encre-soft);}
-  .colophon a:hover{color:var(--rouge);}
+  .badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .badge-senior { background: rgba(255,213,0,0.13); color: var(--jaune); }
+  .badge-handicap { background: var(--bleu-dim); color: var(--bleu); }
+  .badge-maladie { background: var(--orange-dim); color: var(--orange); }
+  .badge-nourrisson { background: var(--vert-dim); color: #4ade80; }
+  .badge-ok { background: var(--vert-dim); color: var(--vert); }
+  .badge-alerte { background: var(--rouge-dim); color: var(--rouge); }
+  .badge-attente { background: var(--jaune-dim); color: var(--jaune); }
+  .badge-injoignable { background: rgba(140,140,140,0.13); color: var(--texte-dim); }
+  .badge-actif { background: var(--vert-dim); color: var(--vert); }
+  .badge-active-pulse { animation: pulse 2s infinite; }
+  .badge-niveau-info { background: var(--bleu-dim); color: var(--bleu); }
+  .badge-niveau-vigilance { background: var(--jaune-dim); color: var(--jaune); }
+  .badge-niveau-alerte { background: var(--orange-dim); color: var(--orange); }
+  .badge-niveau-urgence { background: var(--rouge-dim); color: var(--rouge); }
 
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
-  .reveal.in{opacity:1; transform:translateY(0);}
+  .meteo-card {
+    background: var(--bg2); border: 1px solid var(--border-soft); border-radius: var(--radius);
+    padding: 18px 22px; margin-bottom: 22px; display: flex; align-items: center; gap: 28px;
+    flex-wrap: wrap; box-shadow: var(--shadow-card);
+  }
+  .meteo-temp { display: flex; align-items: baseline; gap: 4px; }
+  .meteo-temp .mtv { font-size: 26px; font-weight: 800; }
+  .meteo-temp .mtl { font-size: 11px; color: var(--texte-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+  .meteo-divider { width: 1px; height: 30px; background: var(--border); }
 
-  @media (max-width: 900px){
-    .hero-foot{grid-template-columns:1fr; gap:28px;}
-    .order-item{grid-template-columns:60px 1fr; }
-    .order-item p{grid-column:1 / -1;}
-    .tag-grid{grid-template-columns:1fr 1fr;}
+  /* ===================== MODALS ===================== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.72); backdrop-filter: blur(3px);
+    z-index: 200; align-items: center; justify-content: center; padding: 24px;
   }
-  @media (max-width: 560px){
-    .wrap{padding:0 20px;}
-    .tag-grid{grid-template-columns:1fr;}
-    .masthead-mid{display:none;}
-    .cta-band{padding:70px 0;}
+  .modal-overlay.open { display: flex; animation: fadein 0.2s var(--ease); }
+  .modal {
+    background: var(--bg2); border: 1px solid var(--jaune-border); border-radius: 18px; padding: 0;
+    width: 100%; max-width: 580px; max-height: 88vh; display: flex; flex-direction: column;
+    box-shadow: var(--shadow-pop); animation: rise 0.25s var(--ease);
   }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    .reveal{transition:none; opacity:1; transform:none;}
-    .btn, .hangtag{transition:none;}
+  .modal-head {
+    display: flex; align-items: center; justify-content: space-between; padding: 22px 28px;
+    border-bottom: 1px solid var(--border-soft); flex-shrink: 0;
+  }
+  .modal-head h2 { font-size: 16.5px; font-weight: 700; color: var(--texte); }
+  .modal-head h2 span { color: var(--jaune); }
+  .modal-close {
+    width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg3);
+    color: var(--texte-dim); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s var(--ease); flex-shrink: 0;
+  }
+  .modal-close:hover { color: var(--texte); border-color: #3a3a3a; }
+  .modal-body { padding: 22px 28px; overflow-y: auto; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-grid .full { grid-column: 1 / -1; }
+  label { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texte-dim); margin-bottom: 7px; }
+  .form-control {
+    width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    color: var(--texte); padding: 10px 14px; font-size: 13px; outline: none; transition: border-color 0.18s var(--ease); font-family: var(--font);
+  }
+  .form-control:focus { border-color: var(--jaune); }
+  .form-control::placeholder { color: var(--texte-faint); }
+  textarea.form-control { resize: vertical; min-height: 78px; }
+  .modal-foot { display: flex; justify-content: flex-end; gap: 10px; padding: 18px 28px; border-top: 1px solid var(--border-soft); flex-shrink: 0; }
+  .section-title {
+    font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--jaune);
+    margin: 22px 0 12px; padding-bottom: 9px; border-bottom: 1px solid var(--border-soft);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .section-title:first-child { margin-top: 0; }
+  .info-note {
+    margin-top: 20px; padding: 13px 15px; border-radius: 10px; font-size: 12px; color: var(--texte-dim);
+    display: flex; gap: 9px; align-items: flex-start; line-height: 1.5;
+  }
+  .info-note.ok { background: var(--jaune-dim); border: 1px solid var(--jaune-border); }
+  .info-note.warn { background: var(--rouge-dim); border: 1px solid rgba(240,68,56,0.25); }
+  .info-note svg { flex-shrink: 0; margin-top: 1px; }
+
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 6px; }
+  .detail-item { background: var(--bg3); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .detail-item .dl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--texte-dim); margin-bottom: 5px; }
+  .detail-item .dv { font-size: 13.5px; color: var(--texte); font-weight: 600; }
+  .medical-box {
+    background: var(--rouge-dim); border: 1px solid rgba(240,68,56,0.25); border-radius: var(--radius-sm);
+    padding: 14px 16px; margin-top: 4px;
+  }
+  .medical-row { display: flex; gap: 8px; font-size: 12.5px; padding: 4px 0; }
+  .medical-row .ml { color: var(--texte-dim); min-width: 110px; font-weight: 600; }
+  .medical-row .mv { color: var(--texte); }
+  video.video-preview { width: 100%; border-radius: var(--radius-sm); background: #000; margin-top: 4px; }
+
+  /* ===================== CAMPAGNES ===================== */
+  .campagne-header {
+    background: var(--bg2); border: 1px solid var(--jaune-border); border-radius: var(--radius); padding: 20px 24px;
+    margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .campagne-titre { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .campagne-titre span { color: var(--jaune); }
+  .tag-active {
+    background: var(--rouge-dim); color: var(--rouge); font-size: 10.5px; font-weight: 700; padding: 3px 9px;
+    border-radius: 10px; letter-spacing: 0.4px; text-transform: uppercase;
+  }
+  .campagne-stats { display: flex; gap: 26px; }
+  .cstat { text-align: center; }
+  .cstat-val { font-size: 26px; font-weight: 800; line-height: 1; }
+  .cstat-label { font-size: 10.5px; color: var(--texte-dim); text-transform: uppercase; letter-spacing: 0.4px; margin-top: 4px; }
+  .progress-bar-wrap { background: var(--bg2); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 16px 22px; margin-bottom: 18px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--texte-dim); margin-bottom: 10px; }
+  .progress-bar-bg { height: 8px; background: var(--bg4); border-radius: 5px; overflow: hidden; display: flex; gap: 2px; }
+  .progress-seg { height: 100%; border-radius: 3px; transition: width 0.5s var(--ease); }
+  .seg-ok { background: var(--vert); }
+  .seg-alerte { background: var(--rouge); }
+  .seg-injoignable { background: var(--texte-faint); }
+
+  /* ===================== TOAST ===================== */
+  .toast {
+    position: fixed; top: 76px; right: 24px; background: var(--bg2); border: 1px solid var(--jaune-border);
+    border-radius: 12px; padding: 14px 18px; font-size: 13px; z-index: 500; display: flex; align-items: center; gap: 12px;
+    transform: translateX(130%); transition: transform 0.35s var(--ease); max-width: 340px; box-shadow: var(--shadow-pop);
+  }
+  .toast.show { transform: translateX(0); }
+  .toast-icon {
+    font-size: 15px; width: 28px; height: 28px; border-radius: 50%; background: var(--jaune-dim);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  /* ===================== EMPTY / LOADING ===================== */
+  .empty-state { text-align: center; padding: 64px 24px; color: var(--texte-dim); }
+  .empty-state-icon {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--bg3); display: flex; align-items: center;
+    justify-content: center; margin: 0 auto 18px; font-size: 24px; opacity: 0.8;
+  }
+  .empty-state h3 { font-size: 15px; margin-bottom: 6px; color: var(--texte); font-weight: 700; }
+  .empty-state p { font-size: 12.5px; line-height: 1.5; }
+
+  .loading-spinner { display: flex; align-items: center; justify-content: center; padding: 48px; color: var(--texte-dim); gap: 12px; font-size: 13.5px; }
+  .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--jaune); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 860px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    header { padding: 0 16px; } nav { padding: 8px 16px; overflow-x: auto; } main { padding: 16px; }
+    .mairie-name { display: none; }
+    .form-grid, .detail-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="wrap masthead-inner">
-    <a class="wordmark" href="#top">KA STORE<span class="dot">.</span></a>
-    <span class="masthead-mid mono">ESSAYAGE VIRTUEL — ÉDITION 01</span>
-    <a class="nav-link" href="https://github.com/katanja300824-dotcom/ka-store" target="_blank" rel="noopener">Voir le projet</a>
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5.2 3.4 9.6 8 11 4.6-1.4 8-5.8 8-11V5l-8-3z" fill="#100C00"/></svg>
+    </div>
+    <div class="login-logo">HELP</div>
+    <div class="login-subtitle">Espace Mairie — Accès sécurisé</div>
+    <div class="input-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M3 6l9 7 9-7M4 5h16v14H4z" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input type="email" id="login-email" placeholder="Email agent mairie" autocomplete="off">
+    </div>
+    <div class="input-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <input type="password" id="login-password" placeholder="Mot de passe" onkeydown="if(event.key==='Enter') doLogin()">
+    </div>
+    <button class="btn-login" id="btn-login" onclick="doLogin()">Connexion</button>
+    <div class="login-error" id="login-error">Identifiants incorrects</div>
   </div>
-</header>
+</div>
 
-<main id="top">
-
-  <section class="hero wrap">
-    <div class="hero-kicker">
-      <span class="rouge-tag mono">● EN TEST FERMÉ</span>
-      <div class="line" aria-hidden="true"></div>
-      <span class="mono">ESSAYAGE VIRTUEL PAR IA</span>
+<!-- APP -->
+<div id="app">
+  <header>
+    <div class="header-left">
+      <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5.2 3.4 9.6 8 11 4.6-1.4 8-5.8 8-11V5l-8-3z" fill="#100C00"/></svg></div>
+      <div class="logo">HELP</div>
+      <div class="mairie-name" id="mairie-name">Chargement...</div>
     </div>
+    <div class="header-right">
+      <div class="badge-actif"><div class="dot-vert"></div> Système actif</div>
+      <div id="clock"></div>
+      <button class="btn-deconnexion" onclick="doLogout()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Déconnexion
+      </button>
+    </div>
+  </header>
 
-    <h1>
-      <span class="row reveal-word"><span>Compose</span></span>
-      <span class="row reveal-word"><span>ta tenue,</span></span>
-      <span class="row reveal-word"><span><em>swipe</em> par swipe.</span></span>
-    </h1>
+  <nav>
+    <div class="nav-tab active" onclick="showView('registre', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Registre
+    </div>
+    <div class="nav-tab" onclick="showView('campagnes', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a2 2 0 1 1-3.2 2.4"/></svg>
+      Campagnes
+    </div>
+    <div class="nav-tab" onclick="showView('veille', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      Veille sociale
+      <span class="nav-tab-count" id="veille-count">0</span>
+    </div>
+    <div class="nav-tab" onclick="showView('alertes', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><circle cx="12" cy="17" r=".5" fill="currentColor"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      Alertes SOS
+      <span class="nav-tab-count" id="alertes-count">0</span>
+    </div>
+    <div class="nav-tab" onclick="showView('stats', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+      Statistiques
+    </div>
+    <div class="nav-tab" onclick="showView('logs', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/></svg>
+      Logs RGPD
+    </div>
+  </nav>
 
-    <div class="hero-foot">
-      <div>
-        <p class="lede">Choisis ton haut, ton bas, tes chaussures comme tu swipes tes séries préférées. KA Store te montre le résultat directement sur toi — avant même d'acheter.</p>
-        <form class="waitlist-form" data-endpoint="https://vetement-ia-backend.onrender.com/api/waitlist" data-source="hero">
-          <div class="waitlist-row">
-            <label class="sr-only" for="email-hero">Ton adresse email</label>
-            <input class="waitlist-input" type="email" id="email-hero" name="email" placeholder="ton@email.com" required autocomplete="email">
-            <button class="btn btn-primary" type="submit">Rejoindre la liste d'attente</button>
-          </div>
-          <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="waitlist-consent">En t'inscrivant, tu acceptes d'être recontacté·e par email au sujet du lancement. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
-          <p class="waitlist-msg" role="status" aria-live="polite"></p>
-        </form>
-        <div class="cta-row">
-          <a class="btn btn-ghost" href="#comment-ca-marche">Voir comment ça marche</a>
+  <main>
+    <!-- VUE REGISTRE -->
+    <div class="view active" id="view-registre">
+      <div class="stats-grid">
+        <div class="stat-card" style="--accent:#F2F2F0; --accent-dim:rgba(242,242,240,0.08)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="stat-val blanc" id="stat-total">—</div><div class="stat-label">Personnes inscrites</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--jaune); --accent-dim:var(--jaune-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="stat-val jaune" id="stat-seniors">—</div><div class="stat-label">Seniors 65+</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--bleu); --accent-dim:var(--bleu-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="stat-val" style="color:var(--bleu)" id="stat-handicap">—</div><div class="stat-label">Handicap</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--vert); --accent-dim:var(--vert-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="stat-val vert" id="stat-actives">—</div><div class="stat-label">Fiches actives</div>
         </div>
       </div>
-      <p class="hero-note">
-        <strong>01 —</strong> Une photo en pied<br>
-        <strong>02 —</strong> Tu swipes chaque pièce<br>
-        <strong>03 —</strong> L'IA t'habille à l'écran
-      </p>
-    </div>
-  </section>
-
-  <section class="running-order wrap" id="comment-ca-marche">
-    <div class="section-head reveal">
-      <span class="section-label">Running order</span>
-      <h2>Trois gestes, une tenue complète.</h2>
-      <p>Pas de formulaire interminable. Tu montres qui tu es, tu swipes, tu te vois habillé·e.</p>
-    </div>
-    <div class="order-list">
-      <div class="order-item reveal">
-        <span class="order-num display">01</span>
-        <h3>Ta photo</h3>
-        <p>Une photo en pied, et l'app connaît ta silhouette pour tous tes essayages à venir.</p>
-      </div>
-      <div class="order-item reveal">
-        <span class="order-num display">02</span>
-        <h3>Tu swipes</h3>
-        <p>Par zone — couvre-tête, haut, bas, chaussures — dans l'ordre que tu veux, au budget que tu fixes.</p>
-      </div>
-      <div class="order-item reveal">
-        <span class="order-num display">03</span>
-        <h3>Tu te vois</h3>
-        <p>L'IA assemble la tenue complète sur ta photo. Ce que tu vois, c'est (presque) ce que tu portes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="rack" aria-label="Aperçu du portant swipable">
-    <div class="wrap">
-      <div class="rack-head reveal">
-        <div>
-          <span class="section-label">Le portant</span>
-          <h2 class="display" style="font-size:clamp(28px,3.6vw,40px); font-weight:600; margin:0; letter-spacing:-0.01em;">Fais glisser, comme dans l'app.</h2>
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="search-input" placeholder="Rechercher un nom..." oninput="filterTable()">
         </div>
-        <div class="rack-controls">
-          <button class="rack-btn" id="rail-prev" aria-label="Article précédent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>
-          </button>
-          <button class="rack-btn" id="rail-next" aria-label="Article suivant">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
+        <select id="filter-categorie" onchange="filterTable()">
+          <option value="">Toutes les catégories</option>
+          <option value="senior_65">Seniors 65+</option>
+          <option value="handicap">Handicap</option>
+          <option value="maladie_chronique">Maladie chronique</option>
+          <option value="nourrisson">Nourrisson</option>
+        </select>
+        <select id="filter-statut" onchange="filterTable()">
+          <option value="actif">Actifs</option>
+          <option value="">Tous</option>
+          <option value="archive">Archivés</option>
+        </select>
+        <div class="toolbar-spacer"></div>
+        <button class="btn btn-secondary btn-sm" onclick="exportCSV()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Export CSV
+        </button>
+        <button class="btn btn-primary" onclick="openModalPersonne()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Ajouter une personne
+        </button>
       </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom / Prénom</th><th>Catégorie</th><th>Téléphone</th><th>Adresse</th><th>Dernier contact</th><th>Statut</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="registre-tbody">
+            <tr><td colspan="7"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="rail-outer reveal">
-        <div class="rail" id="rail" tabindex="0" role="region" aria-label="Portant d'articles, glisser horizontalement">
+    <!-- VUE CAMPAGNES -->
+    <div class="view" id="view-campagnes">
+      <div class="toolbar">
+        <div style="font-size:16px;font-weight:700;">Campagnes d'alerte</div>
+        <div class="toolbar-spacer"></div>
+        <button class="btn btn-secondary btn-sm" onclick="loadCampagnes()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Actualiser
+        </button>
+        <button class="btn btn-primary" onclick="openModalCampagne()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a2 2 0 1 1-3.2 2.4"/></svg>
+          Lancer une campagne
+        </button>
+      </div>
+      <div id="campagnes-container">
+        <div class="loading-spinner"><div class="spinner"></div> Chargement des campagnes...</div>
+      </div>
+    </div>
 
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M30 18 L14 30 L22 42 L30 36 L30 86 L70 86 L70 36 L78 42 L86 30 L70 18 L58 26 L42 26 Z"/></svg>
-            </div>
-            <p class="tag-name">T-shirt oversize</p>
-            <p class="tag-price mono">24,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M32 14 L68 14 L70 40 L84 84 L68 88 L54 50 L50 50 L36 88 L20 84 L34 40 Z"/><line x1="32" y1="14" x2="34" y2="40"/><line x1="68" y1="14" x2="66" y2="40"/></svg>
-            </div>
-            <p class="tag-name">Jean droit bleu</p>
-            <p class="tag-price mono">49,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M12 58 L20 40 L34 36 L36 44 L54 44 L66 30 L82 36 L86 58 L86 66 L12 66 Z"/><path d="M12 66 Q 20 72 30 66"/><path d="M40 66 Q 48 72 58 66"/><path d="M68 66 Q 76 72 84 66"/></svg>
-            </div>
-            <p class="tag-name">Sneakers blanches</p>
-            <p class="tag-price mono">79,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M40 15 L32 22 L14 30 L22 44 L32 39 L32 88 L68 88 L68 39 L78 44 L86 30 L68 22 L60 15 L54 22 L46 22 Z"/><path d="M40 15 L46 26 L50 22 L54 26 L60 15"/><line x1="32" y1="39" x2="32" y2="88"/><line x1="68" y1="39" x2="68" y2="88"/></svg>
-            </div>
-            <p class="tag-name">Veste structurée</p>
-            <p class="tag-price mono">89,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M40 12 L40 22 M60 12 L60 22"/><path d="M36 22 Q 50 32 64 22 L 68 40 Q 50 48 32 40 Z"/><path d="M32 40 L18 86 L82 86 L68 40"/><path d="M50 48 L50 86" opacity="0.5"/></svg>
-            </div>
-            <p class="tag-name">Robe portefeuille</p>
-            <p class="tag-price mono">54,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
-          <article class="tag-card">
-            <div class="tag-hole" aria-hidden="true"></div>
-            <div class="tag-art" aria-hidden="true">
-              <svg viewBox="0 0 100 100"><path d="M30 40 Q 30 20 50 20 Q 70 20 70 40" /><path d="M18 40 L82 40 L78 84 L22 84 Z"/></svg>
-            </div>
-            <p class="tag-name">Sac bandoulière</p>
-            <p class="tag-price mono">39,99 €</p>
-            <div class="tag-dash" aria-hidden="true"></div>
-            <span class="tag-cta">Swipe →</span>
-          </article>
-
+    <!-- VUE VEILLE SOCIALE -->
+    <div class="view" id="view-veille">
+      <div class="stats-grid">
+        <div class="stat-card" style="--accent:#F2F2F0; --accent-dim:rgba(242,242,240,0.08)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="stat-val blanc" id="veille-stat-inscrits">—</div><div class="stat-label">Inscrits actifs</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--rouge); --accent-dim:var(--rouge-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+          <div class="stat-val rouge" id="veille-stat-alertes">—</div><div class="stat-label">Alertes préventives actives</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--orange); --accent-dim:var(--orange-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="stat-val" style="color:var(--orange)" id="veille-stat-signalements">—</div><div class="stat-label">Signalements actifs</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--jaune); --accent-dim:var(--jaune-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="stat-val jaune" id="veille-stat-acontacter">—</div><div class="stat-label">À recontacter (7j+)</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="hangtags wrap">
-    <div class="section-head reveal">
-      <span class="section-label">Fiche technique</span>
-      <h2>Ce qui rend KA Store différent.</h2>
-    </div>
-    <div class="tag-grid">
-      <div class="hangtag reveal">
-        <span class="hangtag-num mono">— 01</span>
-        <h4>Essayage réaliste</h4>
-        <p>Rendu IA haute fidélité, articles, chaussures et accessoires compris.</p>
-      </div>
-      <div class="hangtag reveal">
-        <span class="hangtag-num mono">— 02</span>
-        <h4>Swipe par zone</h4>
-        <p>Chaque pièce de la tenue se choisit indépendamment, à ton rythme.</p>
-      </div>
-      <div class="hangtag reveal">
-        <span class="hangtag-num mono">— 03</span>
-        <h4>Vidéo animée<span class="badge-soon">Bientôt</span></h4>
-        <p>Ta tenue qui prend vie, comme un mannequin qui défile pour toi.</p>
-      </div>
-      <div class="hangtag reveal">
-        <span class="hangtag-num mono">— 04</span>
-        <h4>Achat direct</h4>
-        <p>Chaque pièce validée renvoie droit vers le site du vendeur.</p>
-      </div>
-    </div>
-  </section>
+      <div id="veille-meteo-card"></div>
 
-  <section class="cta-band">
-    <div class="wrap reveal">
-      <span class="section-label">Prochain numéro</span>
-      <h2>On construit KA Store <em>en ce moment.</em></h2>
-      <p>L'app est en test fermé avant sa sortie publique. Écris-nous pour faire partie des premiers à l'essayer.</p>
-      <form class="waitlist-form waitlist-form-dark" data-endpoint="https://vetement-ia-backend.onrender.com/api/waitlist" data-source="cta-band">
-        <div class="waitlist-row">
-          <label class="sr-only" for="email-cta">Ton adresse email</label>
-          <input class="waitlist-input" type="email" id="email-cta" name="email" placeholder="ton@email.com" required autocomplete="email">
-          <button class="btn btn-primary" type="submit">Demander un accès anticipé</button>
+      <div class="toolbar" style="margin-top:8px">
+        <div style="font-size:16px;font-weight:700;">⚠ Alertes préventives</div>
+        <select id="filter-veille-statut" onchange="loadAlertesPreventives()">
+          <option value="active" selected>Actives</option>
+          <option value="traitee">Traitées</option>
+          <option value="ignoree">Ignorées</option>
+        </select>
+        <select id="filter-veille-type" onchange="loadAlertesPreventives()">
+          <option value="">Tous les risques</option>
+          <option value="canicule">🌡 Canicule</option>
+          <option value="grand_froid">❄️ Grand froid</option>
+          <option value="coupure_edf">⚡ Coupure EDF</option>
+          <option value="isolement">👤 Isolement</option>
+          <option value="autre">⚠️ Autre</option>
+        </select>
+        <div class="toolbar-spacer"></div>
+        <button class="btn btn-secondary btn-sm" onclick="loadAlertesPreventives()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Actualiser
+        </button>
+      </div>
+      <div class="table-wrap" style="margin-bottom:28px">
+        <table>
+          <thead>
+            <tr>
+              <th>Risque</th><th>Niveau</th><th>Concerné(e)</th><th>Déclencheur</th><th>SMS</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="alertes-preventives-tbody">
+            <tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="toolbar">
+        <div style="font-size:16px;font-weight:700;">📍 Signalements terrain</div>
+        <select id="filter-signalement-statut" onchange="loadSignalements()">
+          <option value="actif" selected>Actifs</option>
+          <option value="pris_en_charge">Pris en charge</option>
+          <option value="resolu">Résolus</option>
+        </select>
+        <div class="toolbar-spacer"></div>
+        <button class="btn btn-secondary btn-sm" onclick="loadSignalements()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Actualiser
+        </button>
+        <button class="btn btn-primary" onclick="openModalSignalement()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Nouveau signalement
+        </button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th><th>Adresse</th><th>Description</th><th>Signalé le</th><th>Statut</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="signalements-tbody">
+            <tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VUE ALERTES SOS -->
+    <div class="view" id="view-alertes">
+      <div class="stats-grid">
+        <div class="stat-card" style="--accent:var(--rouge); --accent-dim:var(--rouge-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+          <div class="stat-val rouge" id="asos-stat-actives">—</div><div class="stat-label">Alertes actives</div>
         </div>
-        <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="waitlist-consent">En t'inscrivant, tu acceptes d'être recontacté·e par email. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
-        <p class="waitlist-msg" role="status" aria-live="polite"></p>
-      </form>
+        <div class="stat-card" style="--accent:var(--jaune); --accent-dim:var(--jaune-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="stat-val jaune" id="asos-stat-attente">—</div><div class="stat-label">En cours de prise en charge</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--vert); --accent-dim:var(--vert-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="stat-val vert" id="asos-stat-resolues">—</div><div class="stat-label">Résolues</div>
+        </div>
+        <div class="stat-card" style="--accent:#F2F2F0; --accent-dim:rgba(242,242,240,0.08)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div>
+          <div class="stat-val blanc" id="asos-stat-total">—</div><div class="stat-label">Total (100 dernières)</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <select id="filter-alerte-statut" onchange="filterAlertesSOS()">
+          <option value="">Toutes les alertes</option>
+          <option value="active" selected>Actives</option>
+          <option value="pending">En cours</option>
+          <option value="resolved">Résolues</option>
+        </select>
+        <div class="toolbar-spacer"></div>
+        <button class="btn btn-secondary btn-sm" onclick="loadAlertesSOS()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Actualiser
+        </button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th><th>Personne</th><th>Localisation</th><th>Déclenchée</th><th>Statut</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="alertes-tbody">
+            <tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </section>
 
-</main>
+    <!-- VUE STATS -->
+    <div class="view" id="view-stats">
+      <div class="stats-grid">
+        <div class="stat-card" style="--accent:#F2F2F0; --accent-dim:rgba(242,242,240,0.08)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="stat-val blanc" id="stats-total">—</div><div class="stat-label">Inscrits au registre</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--jaune); --accent-dim:var(--jaune-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/></svg></div>
+          <div class="stat-val jaune" id="stats-campagnes">—</div><div class="stat-label">Campagnes total</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--vert); --accent-dim:var(--vert-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="stat-val vert" id="stats-actives">—</div><div class="stat-label">Fiches actives</div>
+        </div>
+        <div class="stat-card" style="--accent:var(--bleu); --accent-dim:var(--bleu-dim)">
+          <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></div>
+          <div class="stat-val" style="color:var(--bleu)" id="stats-archives">—</div><div class="stat-label">Fiches archivées</div>
+        </div>
+      </div>
+      <div class="empty-state" style="padding-top:40px">
+        <div class="empty-state-icon">📊</div>
+        <h3>Statistiques avancées</h3>
+        <p>Graphiques détaillés disponibles en Phase 2.</p>
+      </div>
+    </div>
 
-<footer>
-  <div class="wrap colophon">
-    <p>© 2026 KA STORE — PROJET INDÉPENDANT, DÉVELOPPÉ PAR KA</p>
-    <div style="display:flex; gap:20px; flex-wrap:wrap;">
-      <a href="mentions-legales.html">MENTIONS LÉGALES</a>
-      <a href="confidentialite.html">CONFIDENTIALITÉ</a>
-      <a href="https://github.com/katanja300824-dotcom/ka-store" target="_blank" rel="noopener">GITHUB ↗</a>
+    <!-- VUE LOGS RGPD -->
+    <div class="view" id="view-logs">
+      <div class="toolbar">
+        <div style="font-size:16px;font-weight:700;">Journal d'accès aux données (RGPD)</div>
+        <div class="toolbar-spacer"></div>
+        <select id="filter-log-action" onchange="loadLogs()">
+          <option value="">Toutes les actions</option>
+          <option value="consultation_fiche">Consultation de fiche</option>
+          <option value="export_csv">Export CSV</option>
+          <option value="lancement_campagne">Lancement de campagne</option>
+        </select>
+        <button class="btn btn-secondary btn-sm" onclick="loadLogs()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Actualiser
+        </button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th><th>Agent</th><th>Action</th><th>Personne concernée</th><th>IP</th>
+            </tr>
+          </thead>
+          <tbody id="logs-tbody">
+            <tr><td colspan="5"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex; justify-content:center; gap:12px; margin-top:16px; align-items:center;">
+        <button class="btn btn-secondary btn-sm" id="logs-prev" onclick="changerPageLogs(-1)">← Précédent</button>
+        <span id="logs-page-info" style="font-size:12px; color:var(--texte-dim)"></span>
+        <button class="btn btn-secondary btn-sm" id="logs-next" onclick="changerPageLogs(1)">Suivant →</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL PERSONNE -->
+<div class="modal-overlay" id="modal-personne">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Ajouter une personne au <span>registre</span></h2>
+      <button class="modal-close" onclick="closeModal('modal-personne')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+    <div class="section-title">Identité</div>
+    <div class="form-grid">
+      <div><label>Nom *</label><input type="text" class="form-control" id="p-nom" placeholder="Dupont"></div>
+      <div><label>Prénom *</label><input type="text" class="form-control" id="p-prenom" placeholder="Marie"></div>
+      <div><label>Date de naissance</label><input type="date" class="form-control" id="p-ddn"></div>
+      <div><label>Téléphone</label><input type="tel" class="form-control" id="p-tel" placeholder="06 00 00 00 00"></div>
+      <div class="full"><label>Adresse *</label><input type="text" class="form-control" id="p-adresse" placeholder="12 rue de la Paix, 83000 Toulon"></div>
+    </div>
+    <div class="section-title">Catégorisation</div>
+    <div class="form-grid">
+      <div><label>Catégorie *</label>
+        <select class="form-control" id="p-categorie">
+          <option value="senior_65">Senior 65+</option>
+          <option value="handicap">Handicap</option>
+          <option value="maladie_chronique">Maladie chronique</option>
+          <option value="nourrisson">Nourrisson</option>
+        </select>
+      </div>
+      <div><label>Mode d'inscription *</label>
+        <select class="form-control" id="p-mode">
+          <option value="formulaire_web">Formulaire web</option>
+          <option value="app">App HELP</option>
+          <option value="tiers">Par un tiers</option>
+          <option value="papier_mairie">Papier mairie</option>
+        </select>
+      </div>
+      <div class="full"><label>Besoins spécifiques</label><textarea class="form-control" id="p-besoins" placeholder="Mobilité réduite, pathologie, isolement..."></textarea></div>
+    </div>
+    <div class="section-title">Personne à prévenir</div>
+    <div class="form-grid">
+      <div><label>Nom</label><input type="text" class="form-control" id="p-prev-nom" placeholder="Dupont Pierre"></div>
+      <div><label>Téléphone</label><input type="tel" class="form-control" id="p-prev-tel" placeholder="06 00 00 00 00"></div>
+      <div><label>Lien</label><input type="text" class="form-control" id="p-prev-lien" placeholder="Fils, voisine, infirmière..."></div>
+    </div>
+    <div class="info-note ok">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      Consentement RGPD recueilli — données traitées conformément au registre canicule CNIL, version v1.0
+    </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('modal-personne')">Annuler</button>
+      <button class="btn btn-primary" id="btn-save-personne" onclick="savePersonne()">Enregistrer</button>
     </div>
   </div>
-</footer>
+</div>
+
+<!-- MODAL CAMPAGNE -->
+<div class="modal-overlay" id="modal-campagne">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Lancer une <span>campagne d'alerte</span></h2>
+      <button class="modal-close" onclick="closeModal('modal-campagne')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+    <div class="form-grid">
+      <div><label>Type d'alerte *</label>
+        <select class="form-control" id="c-type">
+          <option value="canicule">🌡 Canicule</option>
+          <option value="grand_froid">❄️ Grand froid</option>
+          <option value="sanitaire">🦠 Sanitaire</option>
+          <option value="autre">⚠️ Autre</option>
+        </select>
+      </div>
+      <div><label>Niveau de vigilance</label>
+        <select class="form-control" id="c-niveau">
+          <option value="jaune">🟡 Jaune</option>
+          <option value="orange">🟠 Orange</option>
+          <option value="rouge">🔴 Rouge</option>
+        </select>
+      </div>
+      <div><label>Cibler une catégorie</label>
+        <select class="form-control" id="c-categorie">
+          <option value="">Tout le registre actif</option>
+          <option value="senior_65">Seniors 65+</option>
+          <option value="handicap">Handicap</option>
+          <option value="maladie_chronique">Maladie chronique</option>
+          <option value="nourrisson">Nourrissons</option>
+        </select>
+      </div>
+      <div class="full"><label>Message aux agents *</label><textarea class="form-control" id="c-message" placeholder="Consignes pour les agents CCAS durant cette période de vigilance..."></textarea></div>
+    </div>
+    <div class="info-note warn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+      Cette action va créer une ligne dans le suivi pour chaque personne concernée du registre actif.
+    </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('modal-campagne')">Annuler</button>
+      <button class="btn btn-danger" id="btn-lancer-campagne" onclick="lancerCampagne()">📢 Lancer la campagne</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SIGNALEMENT -->
+<div class="modal-overlay" id="modal-signalement">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Nouveau <span>signalement terrain</span></h2>
+      <button class="modal-close" onclick="closeModal('modal-signalement')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+    <div class="form-grid">
+      <div><label>Type de situation *</label>
+        <select class="form-control" id="s-type">
+          <option value="sdf">🏚 Personne sans abri</option>
+          <option value="isolement">👤 Isolement</option>
+          <option value="urgence_sociale">🆘 Urgence sociale</option>
+          <option value="autre">⚠️ Autre</option>
+        </select>
+      </div>
+      <div><label>Adresse / lieu-dit</label><input type="text" class="form-control" id="s-adresse" placeholder="Ex: Place de la Liberté, Toulon"></div>
+      <div class="full"><label>Description *</label><textarea class="form-control" id="s-description" placeholder="Situation observée, état de la personne, contexte..."></textarea></div>
+    </div>
+    <div class="info-note ok">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      Ce signalement sera automatiquement croisé avec la météo (grand froid) pour déclencher une alerte préventive si nécessaire.
+    </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="closeModal('modal-signalement')">Annuler</button>
+      <button class="btn btn-primary" id="btn-save-signalement" onclick="saveSignalement()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DETAIL ALERTE SOS -->
+<div class="modal-overlay" id="modal-alerte-detail">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="alerte-detail-titre">Alerte <span>SOS</span></h2>
+      <button class="modal-close" onclick="closeModal('modal-alerte-detail')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="alerte-detail-body">
+      <!-- injecté par renderAlerteDetail() -->
+    </div>
+    <div class="modal-foot" id="alerte-detail-foot">
+      <!-- boutons d'action injectés dynamiquement -->
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DETAIL PERSONNE -->
+<div class="modal-overlay" id="modal-personne-detail">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="personne-detail-titre">Fiche <span>personne</span></h2>
+      <button class="modal-close" onclick="closeModal('modal-personne-detail')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="personne-detail-body">
+      <!-- injecté par renderPersonneDetail() -->
+    </div>
+    <div class="modal-foot" id="personne-detail-foot">
+      <!-- boutons d'action injectés dynamiquement -->
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toast-icon">✅</span>
+  <span id="toast-msg"></span>
+</div>
 
 <script>
-  // Scroll reveal
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion) {
-    const items = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.12 });
-    items.forEach(el => io.observe(el));
+// ===================== CONFIG =====================
+const API = 'https://help-backend-xom1.onrender.com';
+let TOKEN = localStorage.getItem('mairie_token') || null;
+let USER = JSON.parse(localStorage.getItem('mairie_user') || 'null');
+let PERSONNES = [];
+let CAMPAGNE_ACTIVE = null;
+let CONTACTS_CAMPAGNE = [];
+let ALERTES_SOS = [];
 
-    // Hero headline word-by-word entrance
-    document.querySelectorAll('.reveal-word span').forEach((el, i) => {
-      el.style.transform = 'translateY(110%)';
-      el.style.opacity = '0';
-      el.style.transition = 'transform .8s cubic-bezier(.2,.8,.2,1), opacity .8s ease';
-      el.style.transitionDelay = (i * 0.12) + 's';
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        el.style.transform = 'translateY(0)';
-        el.style.opacity = '1';
-      }));
-    });
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+const AVATAR_COLORS = {
+  senior_65: '#FFD500', handicap: '#53B1FD', maladie_chronique: '#FF9F43', nourrisson: '#4ade80'
+};
+function getInitials(nom, prenom) {
+  return ((prenom ? prenom[0] : '') + (nom ? nom[0] : '')).toUpperCase();
+}
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// ===================== API HELPER =====================
+async function api(method, path, body = null) {
+  const opts = {
+    method,
+    headers: { 'Content-Type': 'application/json', 'x-mairie-token': TOKEN || '' },
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(API + path, opts);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Erreur serveur');
+  return data;
+}
+
+// ===================== AUTH =====================
+async function doLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const pass = document.getElementById('login-password').value;
+  const error = document.getElementById('login-error');
+  const btn = document.getElementById('btn-login');
+
+  if (!email || !pass) { error.textContent = 'Email et mot de passe requis'; error.style.display = 'block'; return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Connexion...';
+  error.style.display = 'none';
+
+  try {
+    const data = await api('POST', '/api/registre/auth/login', { email, password: pass });
+    TOKEN = data.token;
+    USER = data.user;
+    localStorage.setItem('mairie_token', TOKEN);
+    localStorage.setItem('mairie_user', JSON.stringify(USER));
+    onLoginSuccess();
+  } catch (e) {
+    error.textContent = e.message === 'Identifiants invalides' ? 'Identifiants incorrects' : e.message;
+    error.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Connexion';
   }
+}
 
-  // Draggable rail (mouse + touch works natively via overflow-x, this adds click-drag for desktop mouse)
-  const rail = document.getElementById('rail');
-  let isDown = false, startX, scrollLeft;
+function onLoginSuccess() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  document.getElementById('mairie-name').textContent = USER?.nom || 'Espace Mairie';
+  startClock();
+  loadRegistre();
+  loadCampagnes();
+  loadAlertesSOS();
+  loadVeilleDashboardStats();
+}
 
-  rail.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - rail.offsetLeft;
-    scrollLeft = rail.scrollLeft;
-  });
-  window.addEventListener('mouseup', () => { isDown = false; });
-  window.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - rail.offsetLeft;
-    const walk = (x - startX) * 1.4;
-    rail.scrollLeft = scrollLeft - walk;
-  });
+function doLogout() {
+  TOKEN = null; USER = null;
+  localStorage.removeItem('mairie_token');
+  localStorage.removeItem('mairie_user');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('login-email').value = '';
+  document.getElementById('login-password').value = '';
+}
 
-  const cardWidth = 220;
-  document.getElementById('rail-prev').addEventListener('click', () => {
-    rail.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-  });
-  document.getElementById('rail-next').addEventListener('click', () => {
-    rail.scrollBy({ left: cardWidth, behavior: 'smooth' });
-  });
+// Auto-login si token en localStorage
+window.addEventListener('load', () => {
+  if (TOKEN && USER) onLoginSuccess();
+});
 
-  // Waitlist forms → API KA Store (Render)
-  document.querySelectorAll('.waitlist-form').forEach((form) => {
-    const msg = form.querySelector('.waitlist-msg');
-    const btn = form.querySelector('button[type="submit"]');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const endpoint = form.dataset.endpoint;
-      const source = form.dataset.source || null;
-      const formData = new FormData(form);
-      if (formData.get('_gotcha')) return; // honeypot triggered, silently drop
-      const email = formData.get('email');
-      btn.disabled = true;
-      const originalLabel = btn.textContent;
-      btn.textContent = 'Envoi...';
-      msg.textContent = '';
-      msg.className = 'waitlist-msg';
-      try {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source })
-        });
-        const result = await res.json().catch(() => ({}));
-        if (res.ok && result.succes) {
-          msg.textContent = 'C\'est noté — on te recontacte dès l\'ouverture ✓';
-          msg.classList.add('ok');
-          form.reset();
-        } else if (res.status === 400) {
-          msg.textContent = result.erreur || 'Adresse email invalide.';
-          msg.classList.add('err');
-        } else {
-          throw new Error('bad response');
-        }
-      } catch (err) {
-        msg.textContent = 'Oups, l\'envoi a échoué. Écris-nous directement à katanja300824@gmail.com';
-        msg.classList.add('err');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = originalLabel;
-      }
+// ===================== CLOCK =====================
+function startClock() {
+  const el = document.getElementById('clock');
+  setInterval(() => { el.textContent = new Date().toLocaleTimeString('fr-FR'); }, 1000);
+  el.textContent = new Date().toLocaleTimeString('fr-FR');
+}
+
+// ===================== NAVIGATION =====================
+function showView(name, tab) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  tab.classList.add('active');
+  if (name === 'campagnes') loadCampagnes();
+  if (name === 'veille') loadVeilleSociale();
+  if (name === 'alertes') loadAlertesSOS();
+  if (name === 'stats') loadStats();
+  if (name === 'logs') loadLogs();
+}
+
+// ===================== REGISTRE =====================
+async function loadRegistre() {
+  try {
+    const data = await api('GET', '/api/registre/personnes?limit=200&statut=actif');
+    PERSONNES = data.personnes || [];
+    renderRegistre(PERSONNES);
+    updateStats();
+  } catch (e) {
+    document.getElementById('registre-tbody').innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur de chargement</h3><p>${escapeHtml(e.message)}</p></div></td></tr>`;
+  }
+}
+
+function updateStats() {
+  const seniors = PERSONNES.filter(p => p.categorie === 'senior_65').length;
+  const handicap = PERSONNES.filter(p => p.categorie === 'handicap').length;
+  const actifs = PERSONNES.filter(p => p.statut === 'actif').length;
+  document.getElementById('stat-total').textContent = PERSONNES.length;
+  document.getElementById('stat-seniors').textContent = seniors;
+  document.getElementById('stat-handicap').textContent = handicap;
+  document.getElementById('stat-actives').textContent = actifs;
+}
+
+function getCategoryBadge(cat) {
+  const map = {
+    senior_65: '<span class="badge badge-senior">Senior 65+</span>',
+    handicap: '<span class="badge badge-handicap">Handicap</span>',
+    maladie_chronique: '<span class="badge badge-maladie">Maladie chr.</span>',
+    nourrisson: '<span class="badge badge-nourrisson">Nourrisson</span>',
+  };
+  return map[cat] || escapeHtml(cat);
+}
+
+function renderRegistre(items) {
+  const tbody = document.getElementById('registre-tbody');
+  if (!items || items.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="empty-state-icon">👥</div><h3>Aucune personne trouvée</h3><p>Ajoutez la première personne au registre.</p></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = items.map(p => `
+    <tr>
+      <td>
+        <div class="person-cell">
+          <div class="avatar" style="background:${AVATAR_COLORS[p.categorie] || '#8C8C8C'}">${escapeHtml(getInitials(p.nom, p.prenom))}</div>
+          <div><strong>${escapeHtml(p.nom)}</strong> ${escapeHtml(p.prenom)}</div>
+        </div>
+      </td>
+      <td>${getCategoryBadge(p.categorie)}</td>
+      <td style="color:var(--texte-dim)">${escapeHtml(p.telephone) || '—'}</td>
+      <td style="font-size:12px;color:var(--texte-dim)">${escapeHtml(p.adresse)}</td>
+      <td style="font-size:12px;color:${p.date_dernier_contact ? 'var(--texte-dim)' : 'var(--rouge)'}; font-weight:${p.date_dernier_contact ? '400' : '600'}">${p.date_dernier_contact ? new Date(p.date_dernier_contact).toLocaleDateString('fr-FR') : 'Jamais contacté'}</td>
+      <td><span class="badge ${p.statut === 'actif' ? 'badge-actif' : ''}" style="${p.statut !== 'actif' ? 'background:rgba(140,140,140,0.13);color:var(--texte-dim)' : ''}">${escapeHtml(p.statut)}</span></td>
+      <td><button class="btn btn-secondary btn-sm" onclick="voirFichePersonne('${p.id}')">Voir</button></td>
+    </tr>
+  `).join('');
+}
+
+async function voirFichePersonne(id) {
+  try {
+    const data = await api('GET', `/api/registre/personnes/${id}`);
+    renderPersonneDetail(data.personne || data);
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+function renderPersonneDetail(p) {
+  document.getElementById('personne-detail-titre').innerHTML = `Fiche de <span>${escapeHtml(p.prenom)} ${escapeHtml(p.nom)}</span>`;
+
+  document.getElementById('personne-detail-body').innerHTML = `
+    <div class="section-title">Identité</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="dl">Nom</div><div class="dv">${escapeHtml(p.nom)}</div></div>
+      <div class="detail-item"><div class="dl">Prénom</div><div class="dv">${escapeHtml(p.prenom)}</div></div>
+      <div class="detail-item"><div class="dl">Date de naissance</div><div class="dv">${p.date_naissance ? new Date(p.date_naissance).toLocaleDateString('fr-FR') : '—'}</div></div>
+      <div class="detail-item"><div class="dl">Téléphone</div><div class="dv">${escapeHtml(p.telephone) || '—'}</div></div>
+      <div class="detail-item full" style="grid-column:1/-1"><div class="dl">Adresse</div><div class="dv">${escapeHtml(p.adresse)}</div></div>
+    </div>
+    <div class="section-title">Catégorisation</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="dl">Catégorie</div><div class="dv">${getCategoryBadge(p.categorie)}</div></div>
+      <div class="detail-item"><div class="dl">Mode d'inscription</div><div class="dv">${escapeHtml(p.mode_inscription) || '—'}</div></div>
+      <div class="detail-item full" style="grid-column:1/-1"><div class="dl">Besoins spécifiques</div><div class="dv">${escapeHtml(p.besoins_specifiques) || '—'}</div></div>
+    </div>
+    <div class="section-title">Personne à prévenir</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="dl">Nom</div><div class="dv">${escapeHtml(p.personne_a_prevenir_nom) || '—'}</div></div>
+      <div class="detail-item"><div class="dl">Téléphone</div><div class="dv">${escapeHtml(p.personne_a_prevenir_tel) || '—'}</div></div>
+      <div class="detail-item full" style="grid-column:1/-1"><div class="dl">Lien</div><div class="dv">${escapeHtml(p.personne_a_prevenir_lien) || '—'}</div></div>
+    </div>
+    <div class="section-title">Suivi</div>
+    <div class="detail-grid">
+      <div class="detail-item"><div class="dl">Dernier contact</div><div class="dv">${p.date_dernier_contact ? new Date(p.date_dernier_contact).toLocaleDateString('fr-FR') : 'Jamais contacté'}</div></div>
+      <div class="detail-item"><div class="dl">Statut</div><div class="dv">${escapeHtml(p.statut)}</div></div>
+    </div>
+  `;
+
+  const foot = document.getElementById('personne-detail-foot');
+  foot.innerHTML = `
+    <button class="btn btn-secondary" onclick="closeModal('modal-personne-detail')">Fermer</button>
+    ${p.statut === 'actif' ? `<button class="btn btn-danger" onclick="supprimerPersonne('${p.id}')">Archiver la fiche</button>` : ''}
+  `;
+
+  document.getElementById('modal-personne-detail').classList.add('open');
+}
+
+async function supprimerPersonne(id) {
+  if (!confirm('Archiver cette fiche ? Elle ne sera plus visible dans le registre actif, mais restera conservée pour la traçabilité RGPD.')) return;
+  try {
+    await api('DELETE', `/api/registre/personnes/${id}`);
+    showToast('Fiche archivée', '✅');
+    closeModal('modal-personne-detail');
+    await loadRegistre();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+function filterTable() {
+  const q = document.getElementById('search-input').value.toLowerCase();
+  const cat = document.getElementById('filter-categorie').value;
+  const statut = document.getElementById('filter-statut').value;
+  const filtered = PERSONNES.filter(p => {
+    const matchQ = !q || p.nom.toLowerCase().includes(q) || p.prenom.toLowerCase().includes(q);
+    const matchCat = !cat || p.categorie === cat;
+    const matchStatut = !statut || p.statut === statut;
+    return matchQ && matchCat && matchStatut;
+  });
+  renderRegistre(filtered);
+}
+
+// ===================== SAVE PERSONNE =====================
+async function savePersonne() {
+  const nom = document.getElementById('p-nom').value.trim();
+  const prenom = document.getElementById('p-prenom').value.trim();
+  const adresse = document.getElementById('p-adresse').value.trim();
+  if (!nom || !prenom || !adresse) { showToast('Nom, prénom et adresse requis', '⚠️'); return; }
+
+  const btn = document.getElementById('btn-save-personne');
+  btn.disabled = true; btn.textContent = 'Enregistrement...';
+
+  try {
+    await api('POST', '/api/registre/personnes', {
+      nom, prenom,
+      date_naissance: document.getElementById('p-ddn').value || null,
+      adresse,
+      telephone: document.getElementById('p-tel').value || null,
+      categorie: document.getElementById('p-categorie').value,
+      mode_inscription: document.getElementById('p-mode').value,
+      personne_a_prevenir_nom: document.getElementById('p-prev-nom').value || null,
+      personne_a_prevenir_tel: document.getElementById('p-prev-tel').value || null,
+      personne_a_prevenir_lien: document.getElementById('p-prev-lien').value || null,
+      besoins_specifiques: document.getElementById('p-besoins').value || null,
+      consentement_rgpd_version: 'v1.0',
     });
-  });
-</script>
+    closeModal('modal-personne');
+    showToast(`${prenom} ${nom} ajouté(e) au registre`, '✅');
+    ['p-nom','p-ddn','p-tel','p-adresse','p-prev-nom','p-prev-tel','p-prev-lien','p-besoins'].forEach(id => document.getElementById(id).value = '');
+    await loadRegistre();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Enregistrer';
+  }
+}
 
+// ===================== CAMPAGNES =====================
+async function loadCampagnes() {
+  const container = document.getElementById('campagnes-container');
+  container.innerHTML = '<div class="loading-spinner"><div class="spinner"></div> Chargement des campagnes...</div>';
+  try {
+    const campagnes = await api('GET', '/api/registre/campagnes');
+    if (!campagnes || campagnes.length === 0) {
+      container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📢</div><h3>Aucune campagne</h3><p>Lancez votre première campagne d\'alerte.</p></div>';
+      return;
+    }
+    const active = campagnes.find(c => c.statut === 'active');
+    CAMPAGNE_ACTIVE = active || null;
+
+    let html = '';
+    campagnes.forEach(c => {
+      const total = parseInt(c.total) || 0;
+      const ok = parseInt(c.ok) || 0;
+      const alerte = parseInt(c.alerte) || 0;
+      const injoignable = parseInt(c.injoignable) || 0;
+      const enAttente = parseInt(c.en_attente) || 0;
+      const pctOk = total > 0 ? (ok / total * 100).toFixed(0) : 0;
+      const pctAlerte = total > 0 ? (alerte / total * 100).toFixed(0) : 0;
+      const pctInjoignable = total > 0 ? (injoignable / total * 100).toFixed(0) : 0;
+      const isActive = c.statut === 'active';
+
+      html += `
+        <div style="margin-bottom:24px">
+          <div class="campagne-header" style="${isActive ? '' : 'opacity:0.6'}">
+            <div>
+              <div class="campagne-titre">
+                ${isActive ? '🔴 ' : '✅ '}Vigilance <span>${escapeHtml(c.type)}</span> — ${escapeHtml(c.niveau_vigilance) || ''}
+                ${isActive ? '<span class="tag-active">ACTIVE</span>' : ''}
+              </div>
+              <div style="font-size:13px;color:var(--texte-dim);margin-top:4px">
+                Lancée le ${new Date(c.date_lancement).toLocaleString('fr-FR')} · ${total} personnes concernées
+              </div>
+            </div>
+            <div class="campagne-stats">
+              <div class="cstat"><div class="cstat-val vert">${ok}</div><div class="cstat-label">OK</div></div>
+              <div class="cstat"><div class="cstat-val rouge">${alerte}</div><div class="cstat-label">Alerte</div></div>
+              <div class="cstat"><div class="cstat-val" style="color:var(--texte-dim)">${injoignable}</div><div class="cstat-label">Injoign.</div></div>
+              <div class="cstat"><div class="cstat-val jaune">${enAttente}</div><div class="cstat-label">Attente</div></div>
+            </div>
+            ${isActive ? `<button class="btn btn-secondary btn-sm" onclick="cloturerCampagne('${c.id}')">Clôturer</button>` : ''}
+          </div>
+          ${isActive ? `
+          <div class="progress-bar-wrap">
+            <div class="progress-label"><span>Progression</span><span style="color:var(--vert)">${pctOk}% contactés</span></div>
+            <div class="progress-bar-bg">
+              <div class="progress-seg seg-ok" style="width:${pctOk}%"></div>
+              <div class="progress-seg seg-alerte" style="width:${pctAlerte}%"></div>
+              <div class="progress-seg seg-injoignable" style="width:${pctInjoignable}%"></div>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-sm" style="margin-bottom:12px" onclick="loadContactsCampagne('${c.id}')">↻ Voir les contacts</button>
+          <div id="contacts-${c.id}"></div>
+          ` : ''}
+        </div>`;
+    });
+    container.innerHTML = html;
+
+    if (active) loadContactsCampagne(active.id);
+  } catch (e) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur</h3><p>${escapeHtml(e.message)}</p></div>`;
+  }
+}
+
+async function loadContactsCampagne(campagneId) {
+  const el = document.getElementById('contacts-' + campagneId);
+  if (!el) return;
+  el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div> Chargement contacts...</div>';
+  try {
+    const data = await api('GET', `/api/registre/campagnes/${campagneId}`);
+    CONTACTS_CAMPAGNE = data.contacts || [];
+    renderContactsCampagne(campagneId, CONTACTS_CAMPAGNE);
+  } catch (e) {
+    el.innerHTML = `<p style="color:var(--rouge);padding:12px">Erreur : ${escapeHtml(e.message)}</p>`;
+  }
+}
+
+function getStatutBadge(statut) {
+  const map = {
+    en_attente: '<span class="badge badge-attente">En attente</span>',
+    contacte_ok: '<span class="badge badge-ok">OK ✓</span>',
+    contacte_alerte: '<span class="badge badge-alerte">⚠ Alerte</span>',
+    injoignable: '<span class="badge badge-injoignable">Injoignable</span>',
+  };
+  return map[statut] || escapeHtml(statut);
+}
+
+function getCanalLabel(canal) {
+  const map = { app_checkin: '📱 App', sms: '💬 SMS', appel_manuel: '📞 Appel' };
+  return canal ? (map[canal] || escapeHtml(canal)) : '—';
+}
+
+function renderContactsCampagne(campagneId, contacts) {
+  const el = document.getElementById('contacts-' + campagneId);
+  if (!el) return;
+  el.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Nom / Prénom</th><th>Catégorie</th><th>Téléphone</th>
+          <th>Statut</th><th>Canal</th><th>Date contact</th><th>Notes</th><th>Action</th>
+        </tr></thead>
+        <tbody>
+          ${contacts.map(c => `
+            <tr>
+              <td>
+                <div class="person-cell">
+                  <div class="avatar" style="background:${AVATAR_COLORS[c.categorie] || '#8C8C8C'}; width:26px;height:26px;font-size:10px">${escapeHtml(getInitials(c.nom, c.prenom))}</div>
+                  <div><strong>${escapeHtml(c.nom)}</strong> ${escapeHtml(c.prenom)}</div>
+                </div>
+              </td>
+              <td>${getCategoryBadge(c.categorie)}</td>
+              <td style="color:var(--texte-dim)">${escapeHtml(c.telephone) || '—'}</td>
+              <td>${getStatutBadge(c.statut)}</td>
+              <td style="font-size:12px">${getCanalLabel(c.canal_contact)}</td>
+              <td style="font-size:12px;color:var(--texte-dim)">${c.date_contact ? new Date(c.date_contact).toLocaleString('fr-FR') : '—'}</td>
+              <td style="font-size:12px;color:var(--texte-dim);max-width:160px">${escapeHtml(c.notes_agent) || '—'}</td>
+              <td>
+                ${c.statut === 'en_attente' || c.statut === 'injoignable' ? `
+                  <button class="btn btn-primary btn-sm" onclick="marquerContact('${campagneId}', '${c.id}', 'contacte_ok')">✓ OK</button>
+                ` : ''}
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+async function marquerContact(campagneId, contactId, newStatut) {
+  try {
+    await api('PATCH', `/api/registre/campagnes/${campagneId}/contacts/${contactId}`, {
+      statut: newStatut,
+      canal_contact: 'appel_manuel',
+    });
+    showToast('Contact mis à jour', '✅');
+    loadContactsCampagne(campagneId);
+    loadCampagnes();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+async function cloturerCampagne(id) {
+  if (!confirm('Clôturer cette campagne ?')) return;
+  try {
+    await api('PATCH', `/api/registre/campagnes/${id}/cloturer`);
+    showToast('Campagne clôturée', '✅');
+    loadCampagnes();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+// ===================== LANCER CAMPAGNE =====================
+async function lancerCampagne() {
+  const message = document.getElementById('c-message').value.trim();
+  if (!message) { showToast('Message requis', '⚠️'); return; }
+
+  const btn = document.getElementById('btn-lancer-campagne');
+  btn.disabled = true; btn.textContent = 'Lancement...';
+
+  try {
+    const data = await api('POST', '/api/registre/campagnes', {
+      type: document.getElementById('c-type').value,
+      niveau_vigilance: document.getElementById('c-niveau').value,
+      message,
+      categorie: document.getElementById('c-categorie').value || undefined,
+    });
+    closeModal('modal-campagne');
+    document.getElementById('c-message').value = '';
+    showToast(`Campagne lancée — ${data.personnes_concernees} personnes concernées`, '📢');
+    showView('campagnes', document.querySelector('.nav-tab:nth-child(2)'));
+    loadCampagnes();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  } finally {
+    btn.disabled = false; btn.textContent = '📢 Lancer la campagne';
+  }
+}
+
+// ===================== ALERTES SOS =====================
+function getAlerteStatutBadge(statut) {
+  const map = {
+    active: '<span class="badge badge-alerte badge-active-pulse">🔴 Active</span>',
+    pending: '<span class="badge badge-attente">🟡 En cours</span>',
+    resolved: '<span class="badge badge-ok">✓ Résolue</span>',
+  };
+  return map[statut] || `<span class="badge">${escapeHtml(statut)}</span>`;
+}
+
+function getEmergencyTypeLabel(type) {
+  const map = {
+    malaise: '🩺 Malaise',
+    chute: '🤕 Chute',
+    accident: '🚨 Accident',
+    agression: '⚠️ Agression',
+    incendie: '🔥 Incendie',
+    autre: '🆘 Urgence',
+  };
+  return map[(type || '').toLowerCase()] || `🆘 ${escapeHtml(type) || 'Urgence'}`;
+}
+
+async function loadAlertesSOS() {
+  const tbody = document.getElementById('alertes-tbody');
+  tbody.innerHTML = '<tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>';
+  try {
+    const data = await api('GET', '/api/registre/alertes-sos');
+    ALERTES_SOS = data.alerts || [];
+    updateAlertesSOSStats();
+    filterAlertesSOS();
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur de chargement</h3><p>${escapeHtml(e.message)}</p></div></td></tr>`;
+  }
+}
+
+function updateAlertesSOSStats() {
+  const actives = ALERTES_SOS.filter(a => a.status === 'active').length;
+  const attente = ALERTES_SOS.filter(a => a.status === 'pending').length;
+  const resolues = ALERTES_SOS.filter(a => a.status === 'resolved').length;
+  document.getElementById('asos-stat-actives').textContent = actives;
+  document.getElementById('asos-stat-attente').textContent = attente;
+  document.getElementById('asos-stat-resolues').textContent = resolues;
+  document.getElementById('asos-stat-total').textContent = ALERTES_SOS.length;
+  const countBadge = document.getElementById('alertes-count');
+  countBadge.textContent = actives;
+  countBadge.classList.toggle('show', actives > 0);
+}
+
+function filterAlertesSOS() {
+  const statut = document.getElementById('filter-alerte-statut').value;
+  const filtered = statut ? ALERTES_SOS.filter(a => a.status === statut) : ALERTES_SOS;
+  renderAlertesSOS(filtered);
+}
+
+function renderAlertesSOS(items) {
+  const tbody = document.getElementById('alertes-tbody');
+  if (!items || items.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">🆘</div><h3>Aucune alerte</h3><p>Aucune alerte SOS ne correspond à ce filtre.</p></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = items.map(a => `
+    <tr class="${a.status === 'active' ? 'row-alerte-active' : ''}" onclick="openAlerteDetail('${a.id}')">
+      <td>${getEmergencyTypeLabel(a.emergencyType)}</td>
+      <td>${a.userName ? escapeHtml(a.userName) : '<span style="color:var(--texte-dim)">Anonyme</span>'}</td>
+      <td style="font-size:12px;color:var(--texte-dim);max-width:220px">${escapeHtml(a.location?.address) || '—'}</td>
+      <td style="font-size:12px;color:var(--texte-dim)">${new Date(a.timestamp).toLocaleString('fr-FR')}</td>
+      <td>${getAlerteStatutBadge(a.status)}</td>
+      <td onclick="event.stopPropagation()">
+        ${a.status === 'active' ? `<button class="btn btn-secondary btn-sm" onclick="updateAlerteStatus('${a.id}', 'pending')">Prendre en charge</button>` : ''}
+        ${a.status === 'pending' ? `<button class="btn btn-vert btn-sm" onclick="updateAlerteStatus('${a.id}', 'resolved')">Résoudre</button>` : ''}
+        ${a.status === 'resolved' ? '<span style="font-size:12px;color:var(--texte-dim)">—</span>' : ''}
+      </td>
+    </tr>
+  `).join('');
+}
+
+function openAlerteDetail(id) {
+  const a = ALERTES_SOS.find(x => x.id === id);
+  if (!a) return;
+  document.getElementById('alerte-detail-titre').innerHTML = `${getEmergencyTypeLabel(a.emergencyType)} — <span>${escapeHtml(a.userName) || 'Anonyme'}</span>`;
+
+  const medical = a.medical ? `
+    <div class="section-title">⚕ Informations médicales</div>
+    <div class="medical-box">
+      ${a.medical.bloodType ? `<div class="medical-row"><span class="ml">Groupe sanguin</span><span class="mv">${escapeHtml(a.medical.bloodType)}</span></div>` : ''}
+      ${a.medical.allergies ? `<div class="medical-row"><span class="ml">Allergies</span><span class="mv">${escapeHtml(a.medical.allergies)}</span></div>` : ''}
+      ${a.medical.conditions ? `<div class="medical-row"><span class="ml">Pathologies</span><span class="mv">${escapeHtml(a.medical.conditions)}</span></div>` : ''}
+      ${a.medical.medications ? `<div class="medical-row"><span class="ml">Traitements</span><span class="mv">${escapeHtml(a.medical.medications)}</span></div>` : ''}
+    </div>` : '';
+
+  const video = (a.videoUrl && /^https?:\/\//i.test(a.videoUrl)) ? `
+    <div class="section-title">🎥 Vidéo de l'alerte</div>
+    <video class="video-preview" src="${escapeHtml(a.videoUrl)}" controls></video>` : '';
+
+  document.getElementById('alerte-detail-body').innerHTML = `
+    <div class="section-title">Statut</div>
+    <div style="margin-bottom:4px">${getAlerteStatutBadge(a.status)}</div>
+    <div class="detail-grid" style="margin-top:18px">
+      <div class="detail-item"><div class="dl">Déclenchée le</div><div class="dv">${new Date(a.timestamp).toLocaleString('fr-FR')}</div></div>
+      <div class="detail-item"><div class="dl">Personne</div><div class="dv">${escapeHtml(a.userName) || 'Anonyme'}</div></div>
+      <div class="detail-item full" style="grid-column:1/-1"><div class="dl">Localisation</div><div class="dv" style="font-weight:500">${escapeHtml(a.location?.address) || '—'}</div></div>
+    </div>
+    ${medical}
+    ${video}
+  `;
+
+  const foot = document.getElementById('alerte-detail-foot');
+  let actions = '<button class="btn btn-secondary" onclick="closeModal(\'modal-alerte-detail\')">Fermer</button>';
+  if (a.status === 'active') actions += `<button class="btn btn-secondary" onclick="updateAlerteStatus('${a.id}', 'pending', true)">Prendre en charge</button>`;
+  if (a.status !== 'resolved') actions += `<button class="btn btn-vert" onclick="updateAlerteStatus('${a.id}', 'resolved', true)">✓ Marquer résolue</button>`;
+  foot.innerHTML = actions;
+
+  document.getElementById('modal-alerte-detail').classList.add('open');
+}
+
+async function updateAlerteStatus(id, newStatus, closeAfter = false) {
+  try {
+    await api('PATCH', `/api/registre/alertes-sos/${id}/status`, { status: newStatus });
+    showToast(newStatus === 'resolved' ? 'Alerte marquée résolue' : 'Alerte prise en charge', '✅');
+    if (closeAfter) closeModal('modal-alerte-detail');
+    await loadAlertesSOS();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+// ===================== VEILLE SOCIALE =====================
+let ALERTES_PREVENTIVES = [];
+let SIGNALEMENTS = [];
+
+function loadVeilleSociale() {
+  loadVeilleDashboardStats();
+  loadVeilleMeteo();
+  loadAlertesPreventives();
+  loadSignalements();
+}
+
+async function loadVeilleDashboardStats() {
+  try {
+    const data = await api('GET', '/api/help/veille/dashboard-stats');
+    document.getElementById('veille-stat-inscrits').textContent = data.inscrits;
+    document.getElementById('veille-stat-alertes').textContent = data.alertesActives;
+    document.getElementById('veille-stat-signalements').textContent = data.signalementsActifs;
+    document.getElementById('veille-stat-acontacter').textContent = data.aContacterAujourdhui;
+    const countBadge = document.getElementById('veille-count');
+    countBadge.textContent = data.alertesActives;
+    countBadge.classList.toggle('show', data.alertesActives > 0);
+  } catch (e) { console.error('Veille dashboard-stats error:', e); }
+}
+
+async function loadVeilleMeteo() {
+  const el = document.getElementById('veille-meteo-card');
+  try {
+    const data = await api('GET', '/api/help/veille/meteo');
+    const m = data.meteo;
+    const niveauColor = n => n === 'rouge' ? 'var(--rouge)' : n === 'orange' ? 'var(--orange)' : n === 'jaune' ? 'var(--jaune)' : 'var(--vert)';
+    el.innerHTML = `
+      <div class="meteo-card">
+        <div style="font-size:13px;color:var(--texte-dim)">📡 Météo <strong style="color:var(--texte)">${escapeHtml(m.departement)}</strong></div>
+        <div class="meteo-divider"></div>
+        <div class="meteo-temp"><span class="mtv">${m.temperature_max != null ? m.temperature_max.toFixed(0) + '°C' : '—'}</span><span class="mtl">Max</span></div>
+        <div class="meteo-temp"><span class="mtv">${m.temperature_min != null ? m.temperature_min.toFixed(0) + '°C' : '—'}</span><span class="mtl">Min</span></div>
+        <div class="meteo-divider"></div>
+        <div style="font-size:12.5px"><span style="color:var(--texte-dim)">Canicule</span> <span style="color:${niveauColor(m.niveau_canicule)};font-weight:700;text-transform:uppercase">${m.niveau_canicule || '—'}</span></div>
+        <div style="font-size:12.5px"><span style="color:var(--texte-dim)">Grand froid</span> <span style="color:${niveauColor(m.niveau_froid)};font-weight:700;text-transform:uppercase">${m.niveau_froid || '—'}</span></div>
+        <div style="font-size:11px;color:var(--texte-faint);margin-left:auto">Actualisé ${new Date(m.fetched_at).toLocaleString('fr-FR')}</div>
+      </div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="meteo-card" style="color:var(--texte-dim);font-size:12.5px">📡 Pas encore de données météo pour votre commune — le job de veille se lance automatiquement toutes les heures.</div>`;
+  }
+}
+
+function getNiveauBadge(niveau) {
+  const map = {
+    info: '<span class="badge badge-niveau-info">Info</span>',
+    vigilance: '<span class="badge badge-niveau-vigilance">Vigilance</span>',
+    alerte: '<span class="badge badge-niveau-alerte">Alerte</span>',
+    urgence: '<span class="badge badge-niveau-urgence badge-active-pulse">Urgence</span>',
+  };
+  return map[niveau] || `<span class="badge">${escapeHtml(niveau)}</span>`;
+}
+
+function getTypeRisqueLabel(type) {
+  const map = { canicule: '🌡 Canicule', grand_froid: '❄️ Grand froid', coupure_edf: '⚡ Coupure EDF', isolement: '👤 Isolement', autre: '⚠️ Autre' };
+  return map[type] || escapeHtml(type);
+}
+
+async function loadAlertesPreventives() {
+  const tbody = document.getElementById('alertes-preventives-tbody');
+  tbody.innerHTML = '<tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>';
+  const statut = document.getElementById('filter-veille-statut').value;
+  const typeRisque = document.getElementById('filter-veille-type').value;
+  try {
+    let path = `/api/help/veille/alertes-preventives?statut=${statut}`;
+    if (typeRisque) path += `&type_risque=${typeRisque}`;
+    const data = await api('GET', path);
+    ALERTES_PREVENTIVES = data.alertes || [];
+    renderAlertesPreventives(ALERTES_PREVENTIVES);
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur de chargement</h3><p>${escapeHtml(e.message)}</p></div></td></tr>`;
+  }
+}
+
+function renderAlertesPreventives(items) {
+  const tbody = document.getElementById('alertes-preventives-tbody');
+  if (!items || items.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">✅</div><h3>Aucune alerte</h3><p>Aucune alerte préventive pour ce filtre.</p></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = items.map(a => {
+    const concerne = a.personne
+      ? `<div><strong>${escapeHtml(a.personne.nom)}</strong> ${escapeHtml(a.personne.prenom)}</div><div style="font-size:11px;color:var(--texte-dim)">${escapeHtml(a.personne.adresse) || ''}</div>`
+      : (a.signalement ? `<div style="font-size:12px;color:var(--texte-dim)">Signalement — ${escapeHtml(a.signalement.adresse) || 'lieu non précisé'}</div>` : '—');
+    const isActive = a.statut === 'active';
+    return `
+    <tr>
+      <td>${getTypeRisqueLabel(a.typeRisque)}</td>
+      <td>${getNiveauBadge(a.niveau)}</td>
+      <td>${concerne}</td>
+      <td style="font-size:12px;color:var(--texte-dim);max-width:220px">${escapeHtml(a.declencheur) || '—'}</td>
+      <td>${a.smsEnvoye ? '<span class="badge badge-ok">Envoyé</span>' : '<span class="badge badge-injoignable">—</span>'}</td>
+      <td>
+        ${isActive ? `
+          ${a.personne?.telephone && !a.smsEnvoye ? `<button class="btn btn-secondary btn-sm" onclick="envoyerSmsAlerte('${a.id}')">📩 SMS</button>` : ''}
+          <button class="btn btn-vert btn-sm" onclick="traiterAlertePreventive('${a.id}', 'traitee')">✓ Traiter</button>
+          <button class="btn btn-secondary btn-sm" onclick="traiterAlertePreventive('${a.id}', 'ignoree')">Ignorer</button>
+        ` : `<button class="btn btn-secondary btn-sm" onclick="traiterAlertePreventive('${a.id}', 'active')">Réactiver</button>`}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+async function traiterAlertePreventive(id, statut) {
+  try {
+    await api('PATCH', `/api/help/veille/alertes-preventives/${id}`, { statut });
+    showToast(statut === 'traitee' ? 'Alerte marquée traitée' : statut === 'ignoree' ? 'Alerte ignorée' : 'Alerte réactivée', '✅');
+    loadAlertesPreventives();
+    loadVeilleDashboardStats();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+async function envoyerSmsAlerte(id) {
+  try {
+    await api('POST', `/api/help/veille/alertes-preventives/${id}/sms`);
+    showToast('SMS marqué comme envoyé', '📩');
+    loadAlertesPreventives();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+function getSignalementTypeLabel(type) {
+  const map = { sdf: '🏚 Sans abri', isolement: '👤 Isolement', urgence_sociale: '🆘 Urgence sociale', autre: '⚠️ Autre' };
+  return map[type] || escapeHtml(type);
+}
+
+function getSignalementStatutBadge(statut) {
+  const map = {
+    actif: '<span class="badge badge-alerte">Actif</span>',
+    pris_en_charge: '<span class="badge badge-attente">Pris en charge</span>',
+    resolu: '<span class="badge badge-ok">Résolu</span>',
+  };
+  return map[statut] || escapeHtml(statut);
+}
+
+async function loadSignalements() {
+  const tbody = document.getElementById('signalements-tbody');
+  tbody.innerHTML = '<tr><td colspan="6"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>';
+  const statut = document.getElementById('filter-signalement-statut').value;
+  try {
+    const data = await api('GET', `/api/help/veille/signalements?statut=${statut}`);
+    SIGNALEMENTS = data.signalements || [];
+    renderSignalements(SIGNALEMENTS);
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur de chargement</h3><p>${escapeHtml(e.message)}</p></div></td></tr>`;
+  }
+}
+
+function renderSignalements(items) {
+  const tbody = document.getElementById('signalements-tbody');
+  if (!items || items.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-icon">📍</div><h3>Aucun signalement</h3><p>Aucun signalement ne correspond à ce filtre.</p></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = items.map(s => `
+    <tr>
+      <td>${getSignalementTypeLabel(s.type)}</td>
+      <td style="font-size:12px;color:var(--texte-dim);max-width:180px">${escapeHtml(s.adresse) || '—'}</td>
+      <td style="font-size:12px;color:var(--texte-dim);max-width:260px">${escapeHtml(s.description) || '—'}</td>
+      <td style="font-size:12px;color:var(--texte-dim)">${new Date(s.date_signalement).toLocaleString('fr-FR')}</td>
+      <td>${getSignalementStatutBadge(s.statut)}</td>
+      <td>
+        ${s.statut === 'actif' ? `<button class="btn btn-secondary btn-sm" onclick="changerStatutSignalement('${s.id}', 'pris_en_charge')">Prendre en charge</button>` : ''}
+        ${s.statut === 'pris_en_charge' ? `<button class="btn btn-vert btn-sm" onclick="changerStatutSignalement('${s.id}', 'resolu')">Résoudre</button>` : ''}
+        ${s.statut === 'resolu' ? '<span style="font-size:12px;color:var(--texte-dim)">—</span>' : ''}
+      </td>
+    </tr>
+  `).join('');
+}
+
+async function changerStatutSignalement(id, statut) {
+  try {
+    await api('PATCH', `/api/help/veille/signalements/${id}`, { statut });
+    showToast('Signalement mis à jour', '✅');
+    loadSignalements();
+    loadVeilleDashboardStats();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  }
+}
+
+function openModalSignalement() { document.getElementById('modal-signalement').classList.add('open'); }
+
+async function saveSignalement() {
+  const type = document.getElementById('s-type').value;
+  const adresse = document.getElementById('s-adresse').value.trim();
+  const description = document.getElementById('s-description').value.trim();
+  if (!description) { showToast('Description requise', '⚠️'); return; }
+
+  const btn = document.getElementById('btn-save-signalement');
+  btn.disabled = true; btn.textContent = 'Enregistrement...';
+  try {
+    await api('POST', '/api/help/veille/signalements', { type, adresse: adresse || null, description });
+    closeModal('modal-signalement');
+    showToast('Signalement enregistré', '✅');
+    document.getElementById('s-adresse').value = '';
+    document.getElementById('s-description').value = '';
+    loadSignalements();
+    loadVeilleDashboardStats();
+  } catch (e) {
+    showToast('Erreur : ' + e.message, '❌');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Enregistrer';
+  }
+}
+
+// ===================== STATS =====================
+async function loadStats() {
+  try {
+    const [actifs, archives, campagnes] = await Promise.all([
+      api('GET', '/api/registre/personnes?statut=actif&limit=1'),
+      api('GET', '/api/registre/personnes?statut=archive&limit=1'),
+      api('GET', '/api/registre/campagnes'),
+    ]);
+    document.getElementById('stats-total').textContent = actifs.total + (archives.total || 0);
+    document.getElementById('stats-actives').textContent = actifs.total;
+    document.getElementById('stats-archives').textContent = archives.total || 0;
+    document.getElementById('stats-campagnes').textContent = campagnes.length || 0;
+  } catch (e) { console.error('Stats error:', e); }
+}
+
+// ===================== LOGS RGPD =====================
+let LOGS_PAGE = 1;
+const LOGS_LIMIT = 50;
+
+function getActionLabel(action) {
+  const map = {
+    consultation_fiche: '👁 Consultation fiche',
+    export_csv: '⬇ Export CSV',
+    lancement_campagne: '📢 Lancement campagne',
+  };
+  return map[action] || escapeHtml(action);
+}
+
+async function loadLogs() {
+  const tbody = document.getElementById('logs-tbody');
+  tbody.innerHTML = '<tr><td colspan="5"><div class="loading-spinner"><div class="spinner"></div> Chargement...</div></td></tr>';
+  const action = document.getElementById('filter-log-action').value;
+  try {
+    let path = `/api/registre/logs?page=${LOGS_PAGE}&limit=${LOGS_LIMIT}`;
+    if (action) path += `&action=${encodeURIComponent(action)}`;
+    const data = await api('GET', path);
+    const logs = data.logs || [];
+    if (logs.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state"><div class="empty-state-icon">📋</div><h3>Aucun log trouvé</h3><p>Le journal RGPD est vide pour ce filtre.</p></div></td></tr>`;
+    } else {
+      tbody.innerHTML = logs.map(l => `
+        <tr>
+          <td style="font-size:12px;color:var(--texte-dim)">${new Date(l.date_action).toLocaleString('fr-FR')}</td>
+          <td>${escapeHtml(l.utilisateur_nom)}<br><span style="font-size:11px;color:var(--texte-dim)">${escapeHtml(l.utilisateur_email)}</span></td>
+          <td>${getActionLabel(l.action)}</td>
+          <td style="font-size:13px">${l.personne_nom ? `${escapeHtml(l.personne_prenom)} ${escapeHtml(l.personne_nom)}` : '—'}</td>
+          <td style="font-size:12px;color:var(--texte-dim)">${escapeHtml(l.ip_origine) || '—'}</td>
+        </tr>
+      `).join('');
+    }
+    const totalPages = Math.max(1, Math.ceil(data.total / LOGS_LIMIT));
+    document.getElementById('logs-page-info').textContent = `Page ${LOGS_PAGE} / ${totalPages} — ${data.total} entrée${data.total > 1 ? 's' : ''}`;
+    document.getElementById('logs-prev').disabled = LOGS_PAGE <= 1;
+    document.getElementById('logs-next').disabled = LOGS_PAGE >= totalPages;
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>Erreur</h3><p>${escapeHtml(e.message)}</p></div></td></tr>`;
+  }
+}
+
+function changerPageLogs(delta) {
+  LOGS_PAGE = Math.max(1, LOGS_PAGE + delta);
+  loadLogs();
+}
+
+// ===================== EXPORT CSV =====================
+async function exportCSV() {
+  try {
+    const res = await fetch(API + '/api/registre/personnes/export/csv', {
+      headers: { 'x-mairie-token': TOKEN }
+    });
+    if (!res.ok) throw new Error('Erreur export');
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `registre_mairie_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+    showToast('Export CSV téléchargé', '⬇️');
+  } catch (e) {
+    showToast('Erreur export : ' + e.message, '❌');
+  }
+}
+
+// ===================== MODALS =====================
+function openModalPersonne() { document.getElementById('modal-personne').classList.add('open'); }
+function openModalCampagne() { document.getElementById('modal-campagne').classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ===================== TOAST =====================
+function showToast(msg, icon = '✅') {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  document.getElementById('toast-icon').textContent = icon;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); });
+});
+</script>
 </body>
 </html>
