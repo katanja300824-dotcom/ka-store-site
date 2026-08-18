@@ -388,7 +388,7 @@
     <div class="hero-foot">
       <div>
         <p class="lede">Choisis ton haut, ton bas, tes chaussures comme tu swipes tes séries préférées. KA Store te montre le résultat directement sur toi — avant même d'acheter.</p>
-        <form class="waitlist-form" data-endpoint="https://formspree.io/f/VOTRE_ID_FORMSPREE" data-source="hero">
+        <form class="waitlist-form" data-endpoint="https://vetement-ia-backend.onrender.com/api/waitlist" data-source="hero">
           <div class="waitlist-row">
             <label class="sr-only" for="email-hero">Ton adresse email</label>
             <input class="waitlist-input" type="email" id="email-hero" name="email" placeholder="ton@email.com" required autocomplete="email">
@@ -560,7 +560,7 @@
       <span class="section-label">Prochain numéro</span>
       <h2>On construit KA Store <em>en ce moment.</em></h2>
       <p>L'app est en test fermé avant sa sortie publique. Écris-nous pour faire partie des premiers à l'essayer.</p>
-      <form class="waitlist-form waitlist-form-dark" data-endpoint="https://formspree.io/f/VOTRE_ID_FORMSPREE" data-source="cta-band">
+      <form class="waitlist-form waitlist-form-dark" data-endpoint="https://vetement-ia-backend.onrender.com/api/waitlist" data-source="cta-band">
         <div class="waitlist-row">
           <label class="sr-only" for="email-cta">Ton adresse email</label>
           <input class="waitlist-input" type="email" id="email-cta" name="email" placeholder="ton@email.com" required autocomplete="email">
@@ -637,15 +637,17 @@
     rail.scrollBy({ left: cardWidth, behavior: 'smooth' });
   });
 
-  // Waitlist forms → Formspree
+  // Waitlist forms → API KA Store (Render)
   document.querySelectorAll('.waitlist-form').forEach((form) => {
     const msg = form.querySelector('.waitlist-msg');
     const btn = form.querySelector('button[type="submit"]');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const endpoint = form.dataset.endpoint;
-      const data = new FormData(form);
-      if (data.get('_gotcha')) return; // honeypot triggered, silently drop
+      const source = form.dataset.source || null;
+      const formData = new FormData(form);
+      if (formData.get('_gotcha')) return; // honeypot triggered, silently drop
+      const email = formData.get('email');
       btn.disabled = true;
       const originalLabel = btn.textContent;
       btn.textContent = 'Envoi...';
@@ -654,13 +656,17 @@
       try {
         const res = await fetch(endpoint, {
           method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: data
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source })
         });
-        if (res.ok) {
+        const result = await res.json().catch(() => ({}));
+        if (res.ok && result.succes) {
           msg.textContent = 'C\'est noté — on te recontacte dès l\'ouverture ✓';
           msg.classList.add('ok');
           form.reset();
+        } else if (res.status === 400) {
+          msg.textContent = result.erreur || 'Adresse email invalide.';
+          msg.classList.add('err');
         } else {
           throw new Error('bad response');
         }
